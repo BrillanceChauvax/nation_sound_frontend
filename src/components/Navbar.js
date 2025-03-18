@@ -110,9 +110,9 @@ const Navbar = () => {
                         width: '80%',
                         borderRadius: '8px',
                         border: '2px solid white',
-                        backgroundColor: alpha('#E8DEF8', 0.5),
+                        backgroundColor: alpha('#E8DEF8', 0.9),
                         '&:hover': {
-                          backgroundColor: alpha('#E8DEF8', 0.8),
+                          backgroundColor: ('grey.500'),
                         },
                         transition: 'background-color 0.3s'
                       }}
@@ -136,7 +136,7 @@ const Navbar = () => {
             </Drawer>
           </>
         ) : (
-          // Desktop layout (reste inchangé)
+          // Desktop layout / Version bureau
           <>
             <Box
               component="img"

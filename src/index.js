@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Background from './components/Background';
+import Banniere from './components/Banniere';
+import Title from './components/Title';
 
 const theme = createTheme();
 
@@ -14,6 +16,8 @@ root.render(
       <CssBaseline />
       <Background>
         <Navbar />
+        <Banniere />
+        <Title />
       </Background>
     </ThemeProvider>
   </React.StrictMode>
