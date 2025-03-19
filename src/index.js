@@ -6,6 +6,8 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Background from './components/Background';
 import Banniere from './components/Banniere';
 import Title from './components/Title';
+import Programmation from './components/Programmation'
+import Concerts from './components/Concerts'
 
 const theme = createTheme();
 
@@ -18,6 +20,8 @@ root.render(
         <Navbar />
         <Banniere />
         <Title />
+        <Programmation />
+        <Concerts />
       </Background>
     </ThemeProvider>
   </React.StrictMode>

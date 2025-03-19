@@ -86,7 +86,7 @@ const Title = () => {
                 position: 'absolute', 
                 top: '50%', 
                 left: '50%', 
-                transform: 'translate(-50%, -50%) rotate(-15deg)', // Rotation pour effet biais
+                transform: 'translate(-50%, -50%) rotate(-15deg)', // Rotation pour effet en biais
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'center',
@@ -99,11 +99,11 @@ const Title = () => {
                 src={logoTitre}
                 alt="Nation Sound Festival"
                 sx={{ 
-                    maxWidth: { xs: '85%', sm: '75%', md: '65%' },  // Réduire légèrement pour compenser la rotation
+                    maxWidth: { xs: '85%', sm: '75%', md: '65%' },  
                     maxHeight: { xs: '100%', sm: '100%', md: '100%' },
                     height: 'auto',
-                    display: 'block',  // Élimine l'espace blanc sous l'image
-                    margin: '0 auto',  // Centre horizontalement
+                    display: 'block',  
+                    margin: '0 auto',  
                   }}
               />
             </Box>
@@ -153,7 +153,7 @@ const CountdownUnit = ({ value, label }) => (
         color: '#ff0000',
         fontWeight: 700,
         lineHeight: 1,
-        fontFamily: "'Courier New', monospace", // Police style calculatrice
+        fontFamily: "'Courier New', monospace", // Police stylisée
         backgroundColor: 'rgba(20, 20, 20, 0.8)',
         padding: '4px 6px',
         borderRadius: '4px',
