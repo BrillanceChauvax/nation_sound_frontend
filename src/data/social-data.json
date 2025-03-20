@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Facebook",
+    "icon": "https://img.icons8.com/?size=100&id=84872&format=png&color=FFFFFF", 
+    "url": "https://facebook.com"
+  },
+  {
+    "id": 2,
+    "name": "Instagram",
+    "icon": "https://img.icons8.com/?size=100&id=84884&format=png&color=FFFFFF",
+    "url": "https://instagram.com"
+  },
+  {
+    "id": 3,
+    "name": "X",
+    "icon": "https://img.icons8.com/?size=100&id=ud9VVQzOPag8&format=png&color=FFFFFF",
+    "url": "https://x.com"
+  },
+  {
+    "id": 4,
+    "name": "YouTube",
+    "icon": "https://img.icons8.com/?size=100&id=84909&format=png&color=FFFFFF",
+    "url": "https://youtube.com"
+  },
+  {
+    "id": 5,
+    "name": "LinkedIn",
+    "icon": "https://img.icons8.com/?size=100&id=84888&format=png&color=FFFFFF",
+    "url": "https://linkedin.com"
+  },
+  {
+    "id": 6,
+    "name": "TikTok",
+    "icon": "https://img.icons8.com/?size=100&id=juS4pYkbvSCh&format=png&color=FFFFFF",
+    "url": "https://tiktok.com"
+  }
+]
