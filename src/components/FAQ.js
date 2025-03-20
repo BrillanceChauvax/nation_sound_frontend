@@ -1,11 +1,10 @@
 import { Container, Grid, Typography, Accordion, AccordionSummary, 
-    AccordionDetails, useTheme, alpha } from '@mui/material';
+    AccordionDetails, alpha } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import faqData from '../data/faq-data.json';
 
 
 const FAQ = () => {
-    const theme = useTheme();
 
   return (
     <Container 

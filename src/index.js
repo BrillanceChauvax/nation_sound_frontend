@@ -10,6 +10,7 @@ import Programmation from './components/Programmation';
 import Concerts from './components/Concerts';
 import Billetterie from './components/Billetterie';
 import FAQ from './components/FAQ'
+import FestivalMap from './components/FestivalMap'
 
 const theme = createTheme();
 
@@ -26,6 +27,7 @@ root.render(
         <Concerts />
         <Billetterie />
         <FAQ />
+        <FestivalMap />
       </Background>
     </ThemeProvider>
   </React.StrictMode>
