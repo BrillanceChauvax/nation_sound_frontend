@@ -22,7 +22,7 @@ const Concerts = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: isMobile ? 2 : isTablet ? 2 : 3,
     slidesToScroll: 2,
     arrows: false,
