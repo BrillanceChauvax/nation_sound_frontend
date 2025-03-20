@@ -9,6 +9,7 @@ import Title from './components/Title';
 import Programmation from './components/Programmation';
 import Concerts from './components/Concerts';
 import Billetterie from './components/Billetterie';
+import FAQ from './components/FAQ'
 
 const theme = createTheme();
 
@@ -24,6 +25,7 @@ root.render(
         <Programmation />
         <Concerts />
         <Billetterie />
+        <FAQ />
       </Background>
     </ThemeProvider>
   </React.StrictMode>
