@@ -1,8 +1,13 @@
-import React from 'react';
-import { Container, Grid, Typography, Box } from '@mui/material';
+import React, { useState } from 'react';
+import { Container, Grid, Typography, Box, Modal, Button } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 const FestivalMap = () => {
+  const [fullscreen, setFullscreen] = useState(false);
   const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914406081603!2d2.2922926156744547!3d48.85837007928754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1621930663349!5m2!1sfr!2sfr";
+
+  const handleOpenFullscreen = () => setFullscreen(true);
+  const handleCloseFullscreen = () => setFullscreen(false);
 
   return (
     <Container 
@@ -32,29 +37,91 @@ const FestivalMap = () => {
           <Box 
             sx={{
               display: 'flex',
-              justifyContent: 'center',
+              flexDirection: 'column',
               alignItems: 'center',
-              height: '500px',
-              width: '100%',
-              backgroundColor: 'white',
-              borderRadius: '8px',
-              overflow: 'hidden'
+              gap: 2
             }}
           >
-            <iframe 
+            <Box 
+              sx={{
+                height: '400px',
+                width: '100%',
+                backgroundColor: 'white',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            >
+              <iframe 
                 src={mapUrl} 
                 width="100%" 
                 height="100%" 
-                title="Carte interactive du festival" 
                 style={{border:0}} 
                 allowFullScreen="" 
                 loading="lazy"
-                ></iframe>
+                title="Carte du festival"
+              ></iframe>
+            </Box>
+            <Button 
+              variant="contained" 
+              onClick={handleOpenFullscreen}
+              sx={{
+                backgroundColor: 'white',
+                color: 'black',
+                '&:hover': {
+                  backgroundColor: '#f0f0f0',
+                }
+              }}
+            >
+              Voir la carte en grand
+            </Button>
           </Box>
         </Grid>
       </Grid>
+
+      <Modal
+        open={fullscreen}
+        onClose={handleCloseFullscreen}
+        aria-labelledby="fullscreen-map"
+        aria-describedby="fullscreen-map-description"
+      >
+        <Box sx={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '90%',
+          height: '90%',
+          bgcolor: 'background.paper',
+          boxShadow: 24,
+          p: 4,
+          borderRadius: 2,
+        }}>
+          <Button
+            onClick={handleCloseFullscreen}
+            sx={{
+              position: 'absolute',
+              right: 8,
+              top: 8,
+              color: 'black',
+            }}
+          >
+            <CloseIcon />
+          </Button>
+          <iframe 
+            src={mapUrl} 
+            width="100%" 
+            height="100%" 
+            style={{border:0}} 
+            allowFullScreen="" 
+            loading="lazy"
+            title="Carte du festival en plein écran"
+          ></iframe>
+        </Box>
+      </Modal>
     </Container>
   );
 };
 
 export default FestivalMap;
+
+
