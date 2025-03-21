@@ -4,12 +4,14 @@ import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem,
 import { Link as ScrollLink } from 'react-scroll';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../images/logo.png';
+import { useSocialHighlight } from './SocialHighlightContext';
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const navbarHeight = 96;
+  const { triggerHighlight } = useSocialHighlight();
   
   const menuItems = [
     { name: 'Programme', id: 'programme' },
@@ -18,7 +20,7 @@ const Navbar = () => {
     { name: 'FAQ', id: 'faq' },
     { name: 'Carte', id: 'carte' },
     { name: 'Partenaires', id: 'partenaires' },
-    { name: 'Réseaux', id: 'reseaux' }
+    { name: 'Réseaux', id: 'reseaux', isSocial: true }
   ];
 
   const toggleDrawer = () => {
@@ -186,7 +188,9 @@ const Navbar = () => {
               }
               }}>
               {menuItems.map((item) => (
-                <ScrollLink key={item.id} to={item.id} {...scrollConfig} style={{flex: '1 1 0%'}}>
+                <ScrollLink key={item.id} to={item.id} {...scrollConfig} style={{flex: '1 1 0%'}}
+                 onClick={() => item.id === 'reseaux' && triggerHighlight()}
+                >
                   <Button fullWidth>{item.name}</Button>
                 </ScrollLink>
               ))}

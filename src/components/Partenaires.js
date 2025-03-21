@@ -12,7 +12,6 @@ const Partenaires = () => {
   const [openModal, setOpenModal] = useState(false);
   const images = Array(10).fill(null); // Simulation de 10 partenaires
 
-  // Configuration optimisée avec défilement infini
   const settings = {
     dots: false,
     infinite: true,
@@ -140,7 +139,6 @@ const Partenaires = () => {
               </IconButton>
             </Box>
 
-            {/* Nouveau bouton ajouté ici */}
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2, mb: 3 }}>
               <Button 
                 variant="contained" 
@@ -161,7 +159,6 @@ const Partenaires = () => {
         </Grid>
       </Container>
 
-      {/* Modal ajoutée ici */}
       <Modal
         open={openModal}
         onClose={handleCloseModal}

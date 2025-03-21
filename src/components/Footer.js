@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Box, Grid, IconButton, Typography, Modal, useMediaQuery, useTheme, alpha } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import socials from '../data/social-data.json';
 import legalMentions from '../data/legal-mentions.json';
+import { useSocialHighlight } from './SocialHighlightContext';
 
 const Footer = () => {
   const [openLegal, setOpenLegal] = useState(false);
   const theme = useTheme();
   const isTabletOrMobile = useMediaQuery(theme.breakpoints.down('md'));
-
   const handleSocialClick = (url) => {
     window.open(url, '_blank');
   };
+  const { highlight } = useSocialHighlight();
+  const [localHighlight, setLocalHighlight] = useState(false);
+
+  useEffect(() => {
+    if (highlight) {
+      setLocalHighlight(true);
+      const timer = setTimeout(() => setLocalHighlight(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [highlight]);
 
   return (
     <section id="reseaux">
@@ -46,12 +56,15 @@ const Footer = () => {
                 onClick={() => handleSocialClick(social.url)}
                 sx={{
                   padding: 0.5,
+                  transform: localHighlight ? 'scale(1.2)' : 'scale(1)',
+                  backgroundColor: localHighlight ? 'rgba(255, 255, 255, 0.3)' : 'transparent',
+                  borderRadius: '50%',
                   '&:hover': {
                     transform: 'scale(1.5)',
                     transition: 'transform 0.3s'
                   },
                   [theme.breakpoints.up('md')]: {
-                    padding: 1 // Augmente le padding sur desktop
+                    padding: 1
                   }
                 }}
               >
@@ -60,9 +73,9 @@ const Footer = () => {
                   src={social.icon}
                   alt={social.name}
                   sx={{
-                    width: { xs: 35, md: 40 }, // Taille des icônes : plus petite sur mobile, plus grande sur desktop
+                    width: { xs: 35, md: 40 }, // Taille des icônes 
                     height: { xs: 35, md: 40 },
-                    transition: 'width 0.3s, height 0.3s', // Animation fluide lors du changement de taille
+                    transition: 'width 0.3s, height 0.3s', 
                   }}
                 />
               </IconButton>              

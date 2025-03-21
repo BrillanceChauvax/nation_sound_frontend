@@ -215,7 +215,7 @@ const Programmation = () => {
               ) : (
                 <Slider ref={sliderRef} {...settings}>
                   {events.map((event) => (
-                    <Box key={event.id} sx={{ padding: '10px' }}>
+                    <Box key={event.id} sx={{ pt: '20px', ml: '3px' }}>
                       <EventVignette event={event} />
                     </Box>
                   ))}
@@ -230,7 +230,6 @@ const Programmation = () => {
   );
 };
 
-// Vignette modifiée pour garantir la rondeur parfaite et une meilleure taille sur mobile
 const EventVignette = ({ event }) => {
     const [hover, setHover] = useState(false);
     const theme = useTheme();
@@ -290,7 +289,6 @@ const EventVignette = ({ event }) => {
           }}
         >
           {hover ? (
-            // Contenu en survol/clic
             <>
               <Typography
                 variant="subtitle1"
@@ -331,7 +329,7 @@ const EventVignette = ({ event }) => {
                   mt: 0.5, 
                   textAlign: 'center',
                   display: '-webkit-box',
-                  WebkitLineClamp: isMobile ? 2 : 3, // 2 lignes sur mobile, 3 sur desktop
+                  WebkitLineClamp: isMobile ? 2 : 3, 
                   WebkitBoxOrient: 'vertical',
                   overflow: 'hidden',
                   maxWidth: '90%',
@@ -353,7 +351,7 @@ const EventVignette = ({ event }) => {
                 fontWeight: 700,
                 textAlign: 'center',
                 textShadow: '1px 1px 3px rgba(0,0,0,0.7)',
-                fontSize: { xs: '0.9rem', sm: '1rem', md: '1rem' } // Adapté
+                fontSize: { xs: '0.9rem', sm: '1rem', md: '1rem' } 
               }}
             >
               {event.title}

@@ -153,7 +153,7 @@ const CountdownUnit = ({ value, label }) => (
         color: '#ff0000',
         fontWeight: 700,
         lineHeight: 1,
-        fontFamily: "'Courier New', monospace", // Police stylisée
+        fontFamily: "'Courier New', monospace", 
         backgroundColor: 'rgba(20, 20, 20, 0.8)',
         padding: '4px 6px',
         borderRadius: '4px',

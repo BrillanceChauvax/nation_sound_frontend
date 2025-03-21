@@ -3,9 +3,7 @@ import { Container, Grid, Typography, Accordion, AccordionSummary,
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import faqData from '../data/faq-data.json';
 
-
 const FAQ = () => {
-
   return (
     <section id="faq">
     <Container 

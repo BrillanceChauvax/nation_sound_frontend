@@ -13,6 +13,7 @@ import FAQ from './components/FAQ'
 import FestivalMap from './components/FestivalMap'
 import Partenaires from './components/Partenaires'
 import Footer from './components/Footer'
+import { SocialHighlightProvider } from './components/SocialHighlightContext';
 
 const theme = createTheme();
 
@@ -21,18 +22,20 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Background>
-        <Navbar />
-        <Banniere />
-        <Title />
-        <Programmation />
-        <Concerts />
-        <Billetterie />
-        <FAQ />
-        <FestivalMap />
-        <Partenaires />
-        <Footer />
-      </Background>
+      <SocialHighlightProvider>
+        <Background>
+          <Navbar />
+            <Banniere />
+            <Title />
+            <Programmation />
+            <Concerts />
+            <Billetterie />
+            <FAQ />
+            <FestivalMap />
+            <Partenaires />
+          <Footer />
+        </Background>
+      </SocialHighlightProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -16,7 +16,7 @@ const Concerts = () => {
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const sliderRef = useRef(null);
 
-  // Configuration du carrousel avec responsivité
+  // Configuration du carrousel (avec responsivité)
   const settings = {
     dots: false,
     infinite: true,
@@ -74,7 +74,7 @@ const Concerts = () => {
             textAlign: 'center' 
           }}
         >
-          Concerts
+          Artistes
         </Typography>
         
         <IconButton
