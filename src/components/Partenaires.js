@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Box, Typography, IconButton, Container, Grid, Button, Modal } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Box, Typography, Container, Grid, Button, Modal, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -10,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const Partenaires = () => {
   const sliderRef = useRef(null);
   const [openModal, setOpenModal] = useState(false);
-  const images = Array(10).fill(null); // Simulation de 10 partenaires
+  const images = Array(10).fill(null);
 
   const settings = {
     dots: false,
@@ -19,7 +17,8 @@ const Partenaires = () => {
     slidesToShow: 5,
     slidesToScroll: 2,
     arrows: false,
-    swipeToSlide: true,
+    swipe: false, // Désactive le glissement tactile
+    swipeToSlide: false, // Désactive le glissement
     centerMode: true,
     centerPadding: '0px',
     autoplay: true,
@@ -29,23 +28,22 @@ const Partenaires = () => {
         breakpoint: 1200,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToScroll: 3,
+          swipe: false // Désactive aussi sur les breakpoints
         }
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
+          swipe: false // Désactive aussi sur les breakpoints
         }
       }
     ]
   };
 
-  // Contrôle manuel du carrousel
-  const goToPrev = () => sliderRef.current?.slickPrev();
-  const goToNext = () => sliderRef.current?.slickNext();
-
+  // Supprimer les fonctions de contrôle manuel
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
 
@@ -76,21 +74,8 @@ const Partenaires = () => {
               Nos Partenaires
             </Typography>
 
+            {/* Supprimer les IconButton des flèches */}
             <Box sx={{ position: 'relative' }}>
-              <IconButton 
-                onClick={goToPrev} 
-                sx={{ 
-                  position: 'absolute', 
-                  left: { xs: -20, sm: -30 }, 
-                  top: '50%', 
-                  transform: 'translateY(-50%)', 
-                  zIndex: 2,
-                  color: 'white'
-                }}
-              >
-                <ArrowBackIcon fontSize="large" />
-              </IconButton>
-
               <Slider ref={sliderRef} {...settings}>
                 {images.map((_, index) => (
                   <Box 
@@ -123,20 +108,6 @@ const Partenaires = () => {
                   </Box>
                 ))}
               </Slider>
-
-              <IconButton 
-                onClick={goToNext} 
-                sx={{ 
-                  position: 'absolute', 
-                  right: { xs: -20, sm: -30 }, 
-                  top: '50%', 
-                  transform: 'translateY(-50%)', 
-                  zIndex: 2,
-                  color: 'white'
-                }}
-              >
-                <ArrowForwardIcon fontSize="large" />
-              </IconButton>
             </Box>
 
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2, mb: 3 }}>

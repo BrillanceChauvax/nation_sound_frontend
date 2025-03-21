@@ -73,7 +73,7 @@ const Navbar = () => {
               PaperProps={{
                 sx: {
                   backgroundColor: alpha('#E8DEF8', 0.2),
-                  marginTop: `${navbarHeight + 3}px`, 
+                  marginTop: "80px", 
                   maxHeight: `calc(100% - ${navbarHeight + 3}px)`,
                   width: '100%',
                   padding: '15px 0 25px 0',
@@ -82,12 +82,6 @@ const Navbar = () => {
               ModalProps={{
                 container: document.body,
                 style: { position: 'absolute' }
-              }}
-              variant="temporary"
-              sx={{
-                '& .MuiBackdrop-root': {
-                  marginTop: `${navbarHeight + 3}px`,
-                },
               }}
             >
               <Box
