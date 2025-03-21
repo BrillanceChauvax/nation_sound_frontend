@@ -46,6 +46,7 @@ const Partenaires = () => {
   const goToNext = () => sliderRef.current?.slickNext();
 
   return (
+    <section id="partenaires">
     <Container 
       maxWidth={false} 
       disableGutters 
@@ -113,7 +114,7 @@ const Partenaires = () => {
                       }
                     }}
                   >
-                    {/* À remplacer par le logo WordPress */}
+                    {/* À remplacer par les logos WordPress */}
                     <Typography>Logo {index + 1}</Typography>
                   </Box>
                 </Box>
@@ -137,6 +138,7 @@ const Partenaires = () => {
         </Grid>
       </Grid>
     </Container>
+    </section>
   );
 };
 

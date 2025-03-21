@@ -14,6 +14,7 @@ const Footer = () => {
   };
 
   return (
+    <section id="reseaux">
     <Box
       component="footer"
       sx={{
@@ -92,7 +93,7 @@ const Footer = () => {
 
           {/* Copyright */}
           {!isTabletOrMobile && (
-            <Grid item xs={4} sx={{ textAlign: 'right' }}>
+            <Grid item xs={4} sx={{ textAlign: 'right', pr: '20px' }}>
               <Typography variant="body2" sx={{ color: 'white', fontWeight: 'bold' }}>
                 Live Events® 2025<br />
                 <span style={{ fontSize: '0.8rem' }}>Tous droits réservés</span>
@@ -139,6 +140,7 @@ const Footer = () => {
         </Modal>
       </Container>
     </Box>
+    </section>
   );
 };
 

@@ -7,6 +7,7 @@ import faqData from '../data/faq-data.json';
 const FAQ = () => {
 
   return (
+    <section id="faq">
     <Container 
       maxWidth={false} 
       disableGutters 
@@ -62,6 +63,7 @@ const FAQ = () => {
         </Grid>
       </Grid>
     </Container>
+    </section>
   );
 };
 

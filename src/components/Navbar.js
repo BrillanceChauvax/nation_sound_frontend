@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, 
-  ListItemText, Box, ButtonGroup, useMediaQuery, useTheme, alpha } from '@mui/material';
+  ListItemText, Box, useMediaQuery, useTheme, alpha } from '@mui/material';
+import { Link as ScrollLink } from 'react-scroll';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../images/logo.png';
 
@@ -11,17 +12,22 @@ const Navbar = () => {
   const navbarHeight = 96;
   
   const menuItems = [
-    'Programme',
-    'Concerts',
-    'Billetterie',
-    'FAQ',
-    'Carte',
-    'Partenaires',
-    'Réseaux'
+    { name: 'Programme', id: 'programme' },
+    { name: 'Concerts', id: 'concerts' },
+    { name: 'Billetterie', id: 'billetterie' },
+    { name: 'FAQ', id: 'faq' },
+    { name: 'Carte', id: 'carte' },
+    { name: 'Partenaires', id: 'partenaires' },
+    { name: 'Réseaux', id: 'reseaux' }
   ];
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
+  };
+
+  const scrollConfig = {
+    smooth: true,
+    duration: 500,
   };
 
   return (
@@ -35,7 +41,6 @@ const Navbar = () => {
     >
       <Toolbar sx={{ justifyContent: isMobile ? 'space-between' : 'flex-start' }}>
         {isMobile ? (
-          // Mobile layout / Version mobile
           <>
             <IconButton
               edge="start"
@@ -49,7 +54,7 @@ const Navbar = () => {
             <Box
               component="img"
               sx={{ 
-                height: 80,
+                height: 60,
                 cursor: 'pointer',
                 mt: 1,
                 mb: 1,
@@ -83,7 +88,6 @@ const Navbar = () => {
                 },
               }}
             >
-
               <Box
                 sx={{ 
                   width: '100%',
@@ -99,49 +103,55 @@ const Navbar = () => {
                   alignItems: 'center',
                   padding: 0
                 }}>
-                  {menuItems.map((text) => (
-                    <ListItem 
-                      button 
-                      key={text}
-                      onClick={toggleDrawer} 
-                      sx={{ 
-                        justifyContent: 'center',
-                        margin: '10px 0',
-                        width: '80%',
-                        borderRadius: '8px',
-                        border: '2px solid white',
-                        backgroundColor: alpha('#E8DEF8', 0.9),
-                        '&:hover': {
-                          backgroundColor: ('grey.500'),
-                        },
-                        transition: 'background-color 0.3s'
-                      }}
-                    >
-                      <ListItemText 
-                        primary={text} 
-                        primaryTypographyProps={{
-                          sx: { 
-                            color: '#000000',
-                            fontSize: '25px',
-                            fontWeight: 800,
-                            textAlign: 'center',
-                            padding: '8px 0'
-                          }
+                  {menuItems.map((item) => (
+                    <ScrollLink key={item.id} to={item.id} {...scrollConfig}>
+                      <ListItem 
+                        button 
+                        onClick={toggleDrawer} 
+                        sx={{ 
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                          margin: '8px auto',
+                          width: '280px',
+                          height: '60px',
+                          borderRadius: '8px',
+                          border: '2px solid white',
+                          backgroundColor: alpha('#E8DEF8', 0.9),
+                          '&:hover': {
+                            backgroundColor: ('grey.500'),
+                          },
+                          transition: 'background-color 0.3s',
+                          flexShrink: 0
                         }}
-                      />
-                    </ListItem>
+                      >
+                        <ListItemText 
+                          primary={item.name} 
+                          primaryTypographyProps={{
+                            sx: { 
+                              color: '#000000',
+                              fontSize: '22px',
+                              fontWeight: 800,
+                              textAlign: 'center',
+                              padding: '8px 0',
+                              whiteSpace: 'nowrap',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis'
+                            }
+                          }}
+                        />
+                      </ListItem>
+                    </ScrollLink>
                   ))}
                 </List>
               </Box>
             </Drawer>
           </>
         ) : (
-          // Desktop layout / Version bureau
           <>
             <Box
               component="img"
               sx={{ 
-                height: 100,
+                height: 90,
                 mr: 6,
                 ml: 2,
                 mb: 1,
@@ -153,35 +163,34 @@ const Navbar = () => {
               onClick={() => window.location.href = '/'}
             />
             
-            <ButtonGroup variant="contained" 
-            aria-label="navigation buttons"
-            spacing={2}  
-            buttonFlex="1 1 auto"  
-            sx={{ 
-              '--ButtonGroup-separatorColor': '#ffffff',  
-              '& .MuiButtonGroup-grouped:not(:last-of-type)': {borderColor: '#ffffff'},
-              width: '100%',  
-              justifyContent: 'space-between', 
-              mr: 4,
-              }}
-            >
-              {menuItems.map((item, index) => (
-                <Button 
-                  key={item}
-                  sx={{ 
-                    backgroundColor: '#E8DEF8',
-                    '&:hover': {
-                      backgroundColor: 'grey.500',
-                    },
-                    color: '#000000',
-                    flex: 1, 
-                    minWidth: 0, 
-                  }}
-                >
-                  {item}
-                </Button>
+            <Box sx={{ 
+              display: 'flex',
+              width: '100%',
+              '& .MuiButton-root': {
+                flex: '1 1 0%', 
+                minWidth: 0, 
+                backgroundColor: '#E8DEF8',
+                borderRadius: 1, 
+                border: '1px solid black', 
+                '&:last-child': {
+                  borderRight: 'none', 
+                },
+                '&:hover': { backgroundColor: 'grey.500' },
+                color: '#000000',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                transition: 'all 0.3s',
+                fontSize: 'clamp(12px, 1.5vw, 16px)', 
+                padding: '8px 4px', 
+              }
+              }}>
+              {menuItems.map((item) => (
+                <ScrollLink key={item.id} to={item.id} {...scrollConfig} style={{flex: '1 1 0%'}}>
+                  <Button fullWidth>{item.name}</Button>
+                </ScrollLink>
               ))}
-            </ButtonGroup>
+          </Box>
           </>
         )}
       </Toolbar>

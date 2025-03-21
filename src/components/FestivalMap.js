@@ -10,6 +10,7 @@ const FestivalMap = () => {
   const handleCloseFullscreen = () => setFullscreen(false);
 
   return (
+    <section id="carte">
     <Container 
       maxWidth={false} 
       disableGutters 
@@ -72,7 +73,7 @@ const FestivalMap = () => {
                 }
               }}
             >
-              Voir la carte en grand
+              Voir la carte en plein écran
             </Button>
           </Box>
         </Grid>
@@ -119,6 +120,7 @@ const FestivalMap = () => {
         </Box>
       </Modal>
     </Container>
+    </section>
   );
 };
 

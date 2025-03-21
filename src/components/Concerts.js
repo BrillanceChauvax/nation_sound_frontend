@@ -47,6 +47,7 @@ const Concerts = () => {
   };
 
   return (
+    <section id="concerts">
     <Container 
       maxWidth={false} 
       disableGutters 
@@ -154,6 +155,7 @@ const Concerts = () => {
       </Grid>
       </Grid>
     </Container>
+    </section>
   );
 };
 

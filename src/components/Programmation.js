@@ -78,6 +78,7 @@ const Programmation = () => {
   };
 
   return (
+    <section id="programme">
     <Container 
       maxWidth={false}
       disableGutters
@@ -225,6 +226,7 @@ const Programmation = () => {
         </Grid>
       </Grid>
     </Container>
+    </section>
   );
 };
 

@@ -4,6 +4,7 @@ import { Container, Button, Grid, Box } from '@mui/material';
 const Billetterie = () => {
 
   return (
+    <section id="billetterie">
     <Container 
       maxWidth={false} 
       disableGutters 
@@ -56,6 +57,7 @@ const Billetterie = () => {
         </Grid>
       </Grid>
     </Container>
+    </section>
   );
 };
 
