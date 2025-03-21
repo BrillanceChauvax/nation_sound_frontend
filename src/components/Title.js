@@ -51,8 +51,8 @@ const Title = () => {
               width: '100%',
               position: 'relative', 
               height: { xs: '400px', sm: '450px', md: '500px' },
-              mb: '10px',
-              mt: '10px',
+              mb: '15px',
+              mt: '15px',
               overflow: 'hidden'
             }}
           >

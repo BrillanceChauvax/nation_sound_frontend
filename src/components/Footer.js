@@ -20,18 +20,16 @@ const Footer = () => {
       sx={{
         backgroundColor: alpha('#ffffff', 0.2),
         py: 2,
-        width: '100%',
         position: 'relative',
       }}
     >
       <Container maxWidth={false} disableGutters>
         <Grid 
           container 
-          spacing={1} 
+          spacing={0} 
           alignItems="center"
           justifyContent="space-between"
           sx={{
-            maxWidth: '100%',
             margin: '0 auto',
             px: {
               xs: 1,
@@ -62,9 +60,9 @@ const Footer = () => {
                   src={social.icon}
                   alt={social.name}
                   sx={{
-                    width: { xs: 30, md: 40 }, // Taille des icônes : plus petite sur mobile, plus grande sur desktop
-                    height: { xs: 30, md: 40 },
-                    transition: 'width 0.3s, height 0.3s' // Animation fluide lors du changement de taille
+                    width: { xs: 35, md: 40 }, // Taille des icônes : plus petite sur mobile, plus grande sur desktop
+                    height: { xs: 35, md: 40 },
+                    transition: 'width 0.3s, height 0.3s', // Animation fluide lors du changement de taille
                   }}
                 />
               </IconButton>              
@@ -116,8 +114,6 @@ const Footer = () => {
             backgroundColor: 'white',
             padding: 4,
             borderRadius: 2,
-            maxWidth: 600,
-            width: '90%',
             position: 'relative'
           }}>
             <IconButton

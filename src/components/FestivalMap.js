@@ -69,7 +69,7 @@ const FestivalMap = () => {
                 backgroundColor: 'white',
                 color: 'black',
                 '&:hover': {
-                  backgroundColor: '#f0f0f0',
+                  backgroundColor: 'grey.500',
                 }
               }}
             >

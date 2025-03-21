@@ -6,7 +6,7 @@ const Background = ({ children }) => {
   return (
     <Box
       sx={{
-        width: '100vw',
+        width: '100%', 
         minHeight: '100vh',
         position: 'relative',
         backgroundImage: `url(${fondSite})`,
@@ -16,6 +16,7 @@ const Background = ({ children }) => {
         backgroundAttachment: 'fixed',
         display: 'flex',
         flexDirection: 'column',
+        overflow: 'hidden', 
       }}
     >
       {children}
