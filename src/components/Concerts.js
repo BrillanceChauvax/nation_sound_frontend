@@ -1,7 +1,5 @@
 import React, { useRef } from 'react';
 import { Box, Typography, IconButton, Container, useTheme, useMediaQuery, Grid } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -22,29 +20,18 @@ const Concerts = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1000,
+    speed: 4000,
     slidesToShow: isMobile ? 2 : isTablet ? 2 : 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     arrows: false,
-    swipeToSlide: true,
     centerMode: false, 
-    variableWidth: false 
+    variableWidth: false,
+    autoplay: true, 
+    autoplaySpeed: 10,
+    pauseOnHover: false
   };
 
   const images = [concert1, concert2, concert3, concert4, concert5, concert6];
-
-  // Fonctions pour contrôler le carrousel
-  const goToPrev = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-  };
-
-  const goToNext = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
-  };
 
   return (
     <section id="concerts">
@@ -68,8 +55,7 @@ const Concerts = () => {
           mb: 4 
         }}
       >
-        <IconButton 
-          onClick={goToPrev} 
+        <IconButton
           sx={{ 
             color: 'white',
             '& .MuiSvgIcon-root': {
@@ -77,7 +63,6 @@ const Concerts = () => {
             }
           }}
         >
-          <ArrowBackIcon />
         </IconButton>
         
         <Typography 
@@ -92,8 +77,7 @@ const Concerts = () => {
           Concerts
         </Typography>
         
-        <IconButton 
-          onClick={goToNext} 
+        <IconButton
           sx={{ 
             color: 'white',
             '& .MuiSvgIcon-root': {
@@ -101,7 +85,6 @@ const Concerts = () => {
             }
           }}
         >
-          <ArrowForwardIcon />
         </IconButton>
       </Box>
 
