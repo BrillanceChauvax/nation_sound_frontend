@@ -4,8 +4,7 @@ import Navbar from './components/Navbar';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Background from './components/Background';
-import Banniere from './components/Banniere';
-import Title from './components/Title';
+import Presentation from './components/Presentation';
 import Programmation from './components/Programmation';
 import Concerts from './components/Concerts';
 import Billetterie from './components/Billetterie';
@@ -25,8 +24,7 @@ root.render(
       <SocialHighlightProvider>
         <Background>
           <Navbar />
-            <Banniere />
-            <Title />
+            <Presentation />
             <Programmation />
             <Concerts />
             <Billetterie />

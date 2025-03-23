@@ -57,7 +57,7 @@ const Footer = () => {
                 sx={{
                   padding: 0.5,
                   transform: localHighlight ? 'scale(1.2)' : 'scale(1)',
-                  backgroundColor: localHighlight ? 'rgba(255, 255, 255, 0.3)' : 'transparent',
+                  backgroundColor: localHighlight ? 'rgb(255, 213, 0)' : 'transparent',
                   borderRadius: '50%',
                   '&:hover': {
                     transform: 'scale(1.5)',

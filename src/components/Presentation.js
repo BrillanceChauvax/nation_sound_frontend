@@ -1,0 +1,176 @@
+import React, { useState, useEffect } from 'react';
+import { Box, Typography } from '@mui/material';
+import logo from '../images/logo.png';
+import fondBanniere from '../images/fond_banniere.jpg';
+
+const Presentation = () => {
+  const [timeLeft, setTimeLeft] = useState({});
+
+  useEffect(() => {
+    const targetDate = new Date(2025, 6, 16, 0, 0, 0);
+    
+    const calculateTimeLeft = () => {
+      const difference = targetDate - new Date();
+      
+      if (difference > 0) {
+        return {
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        };
+      }
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    };
+    
+    setTimeLeft(calculateTimeLeft());
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const CountdownUnit = ({ value, label }) => (
+    <Box sx={{ 
+      display: 'flex', 
+      flexDirection: 'column',
+      alignItems: 'center'
+    }}>
+      <Typography 
+        variant="h5" 
+        sx={{ 
+          color: '#ff0000',
+          fontWeight: 700,
+          lineHeight: 1,
+          fontFamily: "'Courier New', monospace", 
+          backgroundColor: 'rgba(20, 20, 20, 0.8)',
+          padding: '4px 6px',
+          borderRadius: '4px',
+          letterSpacing: '1px',
+          border: '1px solid rgba(255, 0, 0, 0.3)',
+          textShadow: '0 0 5px rgba(255, 0, 0, 0.7)',
+          fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.8rem' }
+        }}
+      >
+        {value?.toString().padStart(2, '0') || '00'}
+      </Typography>
+      <Typography 
+        variant="caption" 
+        sx={{ 
+          color: '#ff0000',
+          fontSize: '0.6rem',
+          marginTop: '2px',
+          fontWeight: 500
+        }}
+      >
+        {label}
+      </Typography>
+    </Box>
+  );
+
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        height: {
+          xs: '770px', 
+          sm: '950px',
+          md: '1030px',
+        },
+        position: 'relative',
+        backgroundImage: `url(${fondBanniere})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        borderBottom: '3px solid white', 
+      }}
+    >
+      {/* Texte "Live Events présente" */}
+      <Box sx={{ position: 'absolute', top: '20px', left: '20px', color: 'white' }}>
+        <Typography 
+          variant="h2" 
+          sx={{ 
+            fontWeight: 700,
+            lineHeight: 1,
+          }}
+        >
+          Live Events<sup>®</sup>
+        </Typography>
+        <Typography 
+          variant="body1" 
+          sx={{ 
+            marginTop: '5px',
+          }}
+        >
+          présente
+        </Typography>
+      </Box>
+
+      {/* Logo principal */}
+      <Box 
+        sx={{ 
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}
+      >
+        <Box
+          component="img"
+          src={logo}
+          alt="Logo du site"
+          sx={{
+            height: {
+              xs: '350px',
+              sm: '450px',
+              md: '650px',
+            },
+            width: 'auto',
+            transition: 'transform 0.3s ease-in-out',
+          }}
+        />
+      </Box>
+
+      <Box 
+      sx={{ 
+        position: 'absolute',
+        bottom: '20px',
+        right: '20px',
+        display: 'flex',  
+        flexDirection: 'column', 
+        justifyContent: 'center',  
+        alignItems: 'center', 
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        borderRadius: '8px',
+        padding: '12px',
+        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'
+      }}
+    >
+      <Typography 
+        variant="body1" 
+        sx={{ 
+          color: 'white',
+          fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+          fontWeight: 'bold',
+          marginBottom: '10px', // Espacement entre la date et le compteur
+          fontFamily: "'Courier New', monospace",
+        }}
+      >
+        du 16 au 18 juillet 2025
+      </Typography>
+      <Box sx={{ 
+        display: 'flex',  
+        justifyContent: 'center',  
+        gap: { xs: 1, sm: 2 }
+      }}>
+        <CountdownUnit value={timeLeft.days} label="JOURS" />
+        <CountdownUnit value={timeLeft.hours} label="HEURES" />
+        <CountdownUnit value={timeLeft.minutes} label="MIN" />
+        <CountdownUnit value={timeLeft.seconds} label="SEC" />
+      </Box>
+    </Box>
+   </Box>
+  );
+};
+
+export default Presentation;
+
