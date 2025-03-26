@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, 
-  ListItemText, Box, useMediaQuery, useTheme, alpha } from '@mui/material';
+  ListItemText, Box, useMediaQuery, useTheme, alpha, useScrollTrigger } from '@mui/material';
 import { Link as ScrollLink } from 'react-scroll';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../images/logo.png';
@@ -10,12 +10,22 @@ const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const navbarHeight = 96;
+  const navbarHeightMobile = 70;
+  const navbarHeightDesktop = 96;
   const { triggerHighlight } = useSocialHighlight();
+  const [scrolled, setScrolled] = useState(false);
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    setScrolled(trigger);
+  }, [trigger]);
   
   const menuItems = [
     { name: 'Programme', id: 'programme' },
-    { name: 'Concerts', id: 'concerts' },
+    { name: 'Artistes', id: 'concerts' },
     { name: 'Billetterie', id: 'billetterie' },
     { name: 'FAQ', id: 'faq' },
     { name: 'Carte', id: 'carte' },
@@ -30,15 +40,20 @@ const Navbar = () => {
   const scrollConfig = {
     smooth: true,
     duration: 500,
+    offset: isMobile ? -navbarHeightMobile : -navbarHeightDesktop,
   };
 
   return (
+    <>
     <AppBar 
-      position="static"
+      position="fixed"
       sx={{
-        backgroundColor: alpha('#ffffff', 0.2),
-        boxShadow: 'none',
+        
+        backgroundColor: scrolled ? alpha('#ffffff', 0.8) : alpha('#ffffff', 0.2),
+        transition: 'background-color 0.3s ease',
         borderBottom: '3px solid white',
+        zIndex: theme.zIndex.drawer + 1,
+        height: isMobile ? navbarHeightMobile : navbarHeightDesktop,
       }}
     >
       <Toolbar sx={{ justifyContent: isMobile ? 'space-between' : 'flex-start' }}>
@@ -46,9 +61,15 @@ const Navbar = () => {
           <>
             <IconButton
               edge="start"
-              color="inherit"
               aria-label="menu"
               onClick={toggleDrawer} 
+              sx={{
+                border: scrolled ? `2px solid black` : `2px solid white`,
+                color: scrolled ? `black` : `white`,
+                borderRadius: '50%', 
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 1)',
+                transition: 'all 0.3s ease',
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -56,10 +77,11 @@ const Navbar = () => {
             <Box
               component="img"
               sx={{ 
-                height: 60,
+                height: 50,
                 cursor: 'pointer',
                 mt: 1,
                 mb: 1,
+                
               }}
               alt="Logo du site"
               src={logo}
@@ -73,8 +95,10 @@ const Navbar = () => {
               PaperProps={{
                 sx: {
                   backgroundColor: alpha('#E8DEF8', 0.2),
-                  marginTop: "80px", 
-                  maxHeight: `calc(100% - ${navbarHeight + 3}px)`,
+                  marginTop: isMobile ? `${navbarHeightMobile}px` : `${navbarHeightDesktop}px`,
+                  maxHeight: isMobile 
+                    ? `calc(100% - ${navbarHeightMobile + 3}px)`
+                    : `calc(100% - ${navbarHeightDesktop + 3}px)`,
                   width: '100%',
                   padding: '15px 0 25px 0',
                 }
@@ -147,7 +171,7 @@ const Navbar = () => {
             <Box
               component="img"
               sx={{ 
-                height: 90,
+                height: 70,
                 mr: 6,
                 ml: 2,
                 mb: 1,
@@ -193,6 +217,8 @@ const Navbar = () => {
         )}
       </Toolbar>
     </AppBar>
+    <Toolbar sx={{ height: isMobile ? navbarHeightMobile : navbarHeightDesktop }}/>
+    </>
   );
 };
 

@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "name": "Bizoptopus",
+      "logo": "/images/logo_partners/Bizoptopus.png",
+      "gender": "Commercial"
+    },
+    {
+      "id": 2,
+      "name": "Bytejoy",
+      "logo": "/images/logo_partners/Bytejoy.png",
+      "gender": "Informatique"
+    },
+    {
+      "id": 3,
+      "name": "Gamenube",
+      "logo": "/images/logo_partners/Gamenube.jpg",
+      "gender": "Jeu vidéo"
+    },
+    {
+      "id": 4,
+      "name": "Changelab",
+      "logo": "/images/logo_partners/Changelab.png",
+      "gender": "Commercial"
+    },
+    {
+      "id": 5,
+      "name": "Foxsearch",
+      "logo": "/images/logo_partners/Foxsearch.jpg",
+      "gender": "Informatique"
+    },
+    {
+      "id": 6,
+      "name": "Givimous",
+      "logo": "/images/logo_partners/Givimous.png",
+      "gender": "Commercial"
+    },
+    {
+      "id": 7,
+      "name": "Infoorammes",
+      "logo": "/images/logo_partners/Infoorammes.png",
+      "gender": "Jeu vidéo"
+    },
+    {
+      "id": 8,
+      "name": "Kadok",
+      "logo": "/images/logo_partners/Kadok.png",
+      "gender": "Commercial"
+    },
+    {
+      "id": 9,
+      "name": "Letterstyle",
+      "logo": "/images/logo_partners/Letterstyle.jpg",
+      "gender": "Commercial"
+    },
+    {
+      "id": 10,
+      "name": "Otari",
+      "logo": "/images/logo_partners/Otari.png",
+      "gender": "Jeu vidéo"
+    }
+]

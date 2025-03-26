@@ -139,7 +139,14 @@ const Footer = () => {
             >
               <CloseIcon />
             </IconButton>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom
+              sx={{
+                textAlign: 'center',
+                marginBottom: '20px', 
+                fontWeight: 'bold', 
+                textTransform: 'uppercase',
+              }}
+            >
               {legalMentions.title}
             </Typography>
             <Typography variant="body2">

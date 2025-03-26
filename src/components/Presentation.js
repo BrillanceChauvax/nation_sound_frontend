@@ -73,9 +73,9 @@ const Presentation = () => {
       sx={{
         width: '100%',
         height: {
-          xs: '770px', 
-          sm: '950px',
-          md: '1030px',
+          xs: '750px', 
+          sm: '750px',
+          md: '770px',
         },
         position: 'relative',
         backgroundImage: `url(${fondBanniere})`,
@@ -87,7 +87,7 @@ const Presentation = () => {
       {/* Texte "Live Events présente" */}
       <Box sx={{ position: 'absolute', top: '20px', left: '20px', color: 'white' }}>
         <Typography 
-          variant="h2" 
+          variant="h3" 
           sx={{ 
             fontWeight: 700,
             lineHeight: 1,
@@ -122,10 +122,8 @@ const Presentation = () => {
             height: {
               xs: '350px',
               sm: '450px',
-              md: '650px',
+              md: '500px',
             },
-            width: 'auto',
-            transition: 'transform 0.3s ease-in-out',
           }}
         />
       </Box>
@@ -141,7 +139,7 @@ const Presentation = () => {
         alignItems: 'center', 
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
         borderRadius: '8px',
-        padding: '12px',
+        padding: '13px',
         boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'
       }}
     >
