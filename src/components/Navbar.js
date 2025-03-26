@@ -190,10 +190,9 @@ const Navbar = () => {
                 flex: '1 1 0%', 
                 minWidth: 0, 
                 backgroundColor: '#E8DEF8',
-                borderRadius: 1, 
+                borderRadius: 2, 
                 border: '1px solid black', 
                 '&:last-child': {
-                  borderRight: 'none', 
                 },
                 '&:hover': { backgroundColor: 'grey.500' },
                 color: '#000000',
@@ -202,7 +201,7 @@ const Navbar = () => {
                 textOverflow: 'ellipsis',
                 transition: 'all 0.3s',
                 fontSize: 'clamp(12px, 1.5vw, 16px)', 
-                padding: '8px 4px', 
+                padding: '5px 5px', 
               }
               }}>
               {menuItems.map((item) => (
