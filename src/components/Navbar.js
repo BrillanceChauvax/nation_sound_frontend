@@ -130,6 +130,7 @@ const Navbar = () => {
                         onClick={toggleDrawer} 
                         sx={{ 
                           justifyContent: 'center',
+                          textTransform: 'uppercase',
                           cursor: 'pointer',
                           margin: '8px auto',
                           width: '280px',
