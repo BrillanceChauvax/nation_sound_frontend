@@ -1,0 +1,248 @@
+{
+    "ACCÈS": {
+      "type": "Accès",
+      "color": "black",
+      "points": [
+        {
+          "id": "acces-1",
+          "name": "Entrée Ouest - Champ-de-Mars",
+          "position": [48.854615, 2.295776],
+          "description": "Point d'accès au festival"
+        },
+        {
+          "id": "acces-2",
+          "name": "Entrée Sud - Champ-de-Mars",
+          "position": [48.852844, 2.302946],
+          "description": "Point d'accès au festival"
+        },
+        {
+          "id": "acces-3",
+          "name": "Entrée Est - Champ-de-Mars",
+          "position": [48.857485, 2.300003],
+          "description": "Point d'accès au festival"
+        },
+        {
+          "id": "acces-4",
+          "name": "Entrée Nord Est - Trocadéro",
+          "position": [48.86278, 2.2919],
+          "description": "Point d'accès au festival"
+        },
+        {
+          "id": "acces-5",
+          "name": "Entrée Nord Ouest - Tour Eiffel",
+          "position": [48.857454, 2.291008],
+          "description": "Point d'accès au festival"
+          }
+      ]
+   },
+    "SCENES": {
+      "type": "Scènes",
+      "color": "red",
+      "points": [
+        {
+          "id": "scene-1",
+          "name": "Scène du Trocadéro",
+          "position": [48.862864, 2.287318],
+          "description": "Pour découvrir la Dubstep"
+        },
+        {
+          "id": "scene-2",
+          "name": "Scène de l'Auditorium",
+          "position": [48.862731, 2.291339],
+          "description": "Dédiée aux DJ sets"
+        },
+        {
+          "id": "scene-3",
+          "name": "Scène de la Tour Eiffel",
+          "position": [48.85793, 2.295014],
+          "description": "Pour les amateurs de House"
+        },
+        {
+          "id": "scene-4",
+          "name": "Scène du Champ-de-Mars",
+          "position": [48.85582, 2.298338],
+          "description": "La plus grande scène du festival, accueillant les têtes d'affiche electro"
+        },
+        {
+          "id": "scene-5",
+          "name": "Scène de la Fontaine de Varsovie",
+          "position": [48.860795, 2.289342],
+          "description": "Techno et Transe au programme"
+        }
+      ]
+    },
+    "BOUTIQUES": {
+      "type": "Boutiques",
+      "color": "blue",
+      "points": [
+        {
+          "id": "boutique-1",
+          "name": "Boutique Souvenir",
+          "position": [48.85482, 2.302209],
+          "description": "Large sélection de merchandising officiel du festival"
+        },
+        {
+          "id": "boutique-2",
+          "name": "Boutique Souvenir",
+          "position": [48.859186, 2.289057],
+          "description": "Produits dérivés exclusifs des artistes présents"
+        }
+      ]
+    },
+    "TOILETTES": {
+      "type": "Toilettes",
+      "color": "green",
+      "points": [
+        {
+          "id": "toilette-1",
+          "name": "Toilettes Trocadéro",
+          "position": [48.862078, 2.292772],
+          "description": "Accès libre"
+        },
+        {
+          "id": "toilette-2",
+          "name": "Toilettes Trocadéro",
+          "position": [48.859943, 2.290068],
+          "description": "Accès libre"
+        },
+        {
+          "id": "toilette-3",
+          "name": "Toilettes Trocadéro",
+          "position": [48.860932, 2.287294],
+          "description": "Accès adapté pour personnes à mobilité réduite"
+        },
+        {
+          "id": "toilette-4",
+          "name": "Toilettes Tour Eiffel",
+          "position": [48.857753, 2.292066],
+          "description": "Accès libre"
+        },
+        {
+          "id": "toilette-5",
+          "name": "Toilettes Tour Eiffel",
+          "position": [48.858928, 2.296722],
+          "description": "Accès adapté pour personnes à mobilité réduite"
+        },
+        {
+          "id": "toilette-6",
+          "name": "Toilettes Champ-de-Mars",
+          "position": [48.85549, 2.296541],
+          "description": "Accès libre"
+        },
+        {
+          "id": "toilette-7",
+          "name": "Toilettes Champ-de-Mars",
+          "position": [48.853834, 2.29901],
+          "description": "Accès adapté pour personnes à mobilité réduite"
+        },
+        {
+          "id": "toilette-8",
+          "name": "Toilettes Champ-de-Mars",
+          "position": [48.853957, 2.303524],
+          "description": "Accès libre"
+        }
+      ]
+    },
+    "BUVETTES": {
+      "type": "Buvettes",
+      "color": "orange",
+      "points": [
+        {
+          "id": "buvette-1",
+          "name": "Buvette Ouest Champ-de-Mars",
+          "position": [48.855159, 2.297057],
+          "description": "Rafraîchissements variés"
+        },
+        {
+          "id": "buvette-2",
+          "name": "Buvette Est Champ-de-Mars",
+          "position": [48.857418, 2.299088],
+          "description": "Boissons chaudes et froides"
+        },
+        {
+          "id": "buvette-3",
+          "name": "Buvette Tour Eiffel",
+          "position": [48.856946, 2.294186],
+          "description": "Spécialités locales"
+        },
+        {
+          "id": "buvette-4",
+          "name": "Buvette Nord - Trocadéro",
+          "position": [48.861274, 2.287449],
+          "description": "Cocktails et boissons alcoolisées"
+        },
+        {
+          "id": "buvette-5",
+          "name": "Buvette Nord Est - Trocadéro",
+          "position": [48.861803, 2.291489],
+          "description": "Options sans alcool et jus de fruits"
+        },
+        {
+          "id": "buvette-6",
+          "name": "Buvette Sud - Champ-de-Mars",
+          "position": [48.853158, 2.301818],
+          "description": "Options sans alcool et jus de fruits"
+        }
+      ]
+    },
+    "RESTAURATION": {
+      "type": "Restauration",
+      "color": "yellow",
+      "points": [
+        {
+          "id": "resto-1",
+          "name": "Stand Street Food",
+          "position": [48.855214, 2.301592],
+          "description": "Grande variété de cuisines du monde"
+        },
+        {
+          "id": "resto-2",
+          "name": "Stand Vegan",
+          "position": [48.855836, 2.294867],
+          "description": "Délices 100% végétaux et options sans gluten"
+        },
+        {
+          "id": "resto-3",
+          "name": "Stand Italien",
+          "position": [48.859828, 2.295174],
+          "description": "Pâtes fraîches et pizzas cuites au feu de bois"
+        },
+        {
+          "id": "resto-4",
+          "name": "Stand Asiatique",
+          "position": [48.862861, 2.2901],
+          "description": "Sushis, noodles et plats asiatiques variés"
+        },
+        {
+          "id": "resto-5",
+          "name": "Stand Mexicain",
+          "position": [48.85986, 2.288466],
+          "description": "Tacos, burritos et spécialités mexicaines"
+        }
+      ]
+    },
+    "AUTRES": {
+      "type": "Autres",
+      "color": "violet",
+      "points": [
+        {
+          "id": "securite",
+          "name": "PC Sécurité",
+          "position": [48.858529, 2.293952],
+          "description": "Poste de contrôle sécurité"
+        },
+        {
+          "id": "accueil",
+          "name": "Accueil",
+          "position": [48.853272, 2.300689],
+          "description": "Point d'information et d'accueil"
+        },
+        {
+          "id": "hopital",
+          "name": "Centre Médical Franklin",
+          "position": [48.859921, 2.285741],
+          "description": "Urgences médicales les plus proches du festival"
+        }
+      ]
+    }
+}

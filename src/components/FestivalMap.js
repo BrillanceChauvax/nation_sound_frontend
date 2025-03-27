@@ -1,103 +1,126 @@
-import React, { useState } from 'react';
-import { Container, Grid, Typography, Box, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useState, useEffect } from 'react';
+import { Container, Grid, Typography, Box, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 import 'leaflet-fullscreen';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
+import mapData from '../data/map-data.json';
 
 // Configuration des icônes par catégorie
 const createIcon = (color) => L.icon({
   iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  shadowSize: [41, 41]
+  iconSize: [20, 35],
+  iconAnchor: [15, 40],
+  shadowSize: [40, 40]
 });
 
-// Données des points d'intérêt
-const POINTS = {
-  SCENES: {
-    type: 'Scènes',
-    color: 'red',
-    icon: createIcon('red'),
-    points: Array.from({length: 5}, (_, i) => ({
-      id: `scene-${i+1}`,
-      name: `Scène ${i+1}`,
-      position: [48.829 + i*0.001, 2.289 + i*0.0005],
-      description: `Scène principale n°${i+1}`
-    }))
-  },
-  BOUTIQUES: {
-    type: 'Boutique souvenir',
-    color: 'blue',
-    icon: createIcon('blue'),
-    points: Array.from({length: 3}, (_, i) => ({
-      id: `boutique-${i+1}`,
-      name: `Boutique ${i+1}`,
-      position: [48.830 + i*0.0005, 2.290 + i*0.0005],
-      description: 'Souvenirs du festival'
-    }))
-  },
-  TOILETTES: {
-    type: 'Toilettes',
-    color: 'green',
-    icon: createIcon('green'),
-    points: Array.from({length: 8}, (_, i) => ({
-      id: `toilette-${i+1}`,
-      name: `Toilettes ${i+1}`,
-      position: [48.831 + i*0.0003, 2.291 + i*0.0003],
-      description: 'Accès libre'
-    }))
-  },
-  BUVETTES: {
-    type: 'Buvettes',
-    color: 'orange',
-    icon: createIcon('orange'),
-    points: Array.from({length: 7}, (_, i) => ({
-      id: `buvette-${i+1}`,
-      name: `Buvette ${i+1}`,
-      position: [48.828 + i*0.0004, 2.292 + i*0.0004],
-      description: 'Rafraîchissements'
-    }))
-  },
-  RESTAURATION: {
-    type: 'Restauration',
-    color: 'yellow',
-    icon: createIcon('yellow'),
-    points: Array.from({length: 7}, (_, i) => ({
-      id: `resto-${i+1}`,
-      name: `Restaurant ${i+1}`,
-      position: [48.827 + i*0.0004, 2.293 + i*0.0004],
-      description: 'Restauration variée'
-    }))
-  },
-  AUTRES: {
-    type: 'Autres',
-    color: 'violet',
-    icon: createIcon('violet'),
-    points: [
-      {
-        id: 'securite',
-        name: 'PC Sécurité',
-        position: [48.8295, 2.2905],
-        description: 'Poste de contrôle sécurité'
-      },
-      {
-        id: 'accueil',
-        name: 'Accueil',
-        position: [48.8300, 2.2910],
-        description: 'Point d\'information et d\'accueil'
-      }
-    ]
-  }
+const Rectangle = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    // Définir les coordonnées du polygone
+    const polygonCoords = [
+      [48.85117, 2.300887],  // Sud-Ouest
+      [48.854275, 2.30548],  // Sud-Est
+      [48.864884, 2.288668], // Nord-Est
+      [48.862104, 2.283745], // Nord-Ouest
+      [48.85117, 2.300887]   // Sud-Ouest (répété pour fermer le polygone)
+    ];
+
+    // Créer le polygone
+    const polygon = L.polygon(polygonCoords, {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.2,
+      weight: 2
+    }).addTo(map);
+
+    // Ajuster la vue de la carte pour inclure le polygone
+    map.fitBounds(polygon.getBounds());
+
+    // Nettoyage lors du démontage du composant
+    return () => {
+      map.removeLayer(polygon);
+    };
+  }, [map]);
+
+  return null;
+};
+
+
+// Liaison du JSON de la data pour les points
+const POINTS = Object.entries(mapData).reduce((acc, [key, value]) => {
+  acc[key] = {
+    ...value,
+    icon: createIcon(value.color)
+  };
+  return acc;
+}, {});
+
+// Géolocalisation utilisateur
+const GeolocationControl = () => {
+  const [isLocating, setIsLocating] = useState(false);
+  const map = useMap();
+
+  const handleLocate = () => {
+    setIsLocating(true);
+    map.locate({ setView: true });
+  };
+
+  useEffect(() => {
+    if (!isLocating) return;
+
+    const onLocationFound = (e) => {
+      const radius = e.accuracy;
+      L.marker(e.latlng)
+        .addTo(map)
+        .bindPopup(`Vous êtes ici (précision : ${Math.round(radius)} mètres)`)
+        .openPopup();
+      L.circle(e.latlng, radius).addTo(map);
+      setIsLocating(false);
+    };
+
+    const onLocationError = () => {
+      alert("La géolocalisation a échoué. Veuillez vérifier vos paramètres et réessayer.");
+      setIsLocating(false);
+    };
+
+    map.on('locationfound', onLocationFound);
+    map.on('locationerror', onLocationError);
+
+    return () => {
+      map.off('locationfound', onLocationFound);
+      map.off('locationerror', onLocationError);
+    };
+  }, [map, isLocating]);
+
+  return (
+    <Button 
+      onClick={handleLocate} 
+      disabled={isLocating}
+      variant="contained"
+      sx={{
+        position: 'absolute',
+        top: '10px',
+        right: '10px',
+        zIndex: 1000,
+        backgroundColor: 'white',
+        color: 'black',
+        '&:hover': { backgroundColor: '#f0f0f0' }
+      }}
+    >
+      {isLocating ? 'Localisation en cours...' : 'Me localiser'}
+    </Button>
+  );
 };
 
 const FestivalMap = () => {
   const [filter, setFilter] = useState('all');
-  const position = [48.830025, 2.290344]; // Coordonnées du parc des expositions de Paris
+  const position = [48.858555, 2.293945];
 
   const handleFilterChange = (event) => setFilter(event.target.value);
 
@@ -116,6 +139,8 @@ const FestivalMap = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
+      <GeolocationControl />
+      <Rectangle />
       {filteredPoints.map(point => {
         const category = Object.values(POINTS).find(cat => 
           cat.points.some(p => p.id === point.id)
