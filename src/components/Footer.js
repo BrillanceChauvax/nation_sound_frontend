@@ -73,7 +73,7 @@ const Footer = () => {
                   src={social.icon}
                   alt={social.name}
                   sx={{
-                    width: { xs: 35, md: 40 }, // Taille des icônes 
+                    width: { xs: 35, md: 40 }, 
                     height: { xs: 35, md: 40 },
                     transition: 'width 0.3s, height 0.3s', 
                   }}
@@ -149,8 +149,17 @@ const Footer = () => {
             >
               {legalMentions.title}
             </Typography>
-            <Typography variant="body2">
-              {legalMentions.content}
+            <Typography variant="body2"
+            sx={{
+                lineHeight: 1,
+              }}
+            >
+              {legalMentions.content.map((paragraph, index) => (
+                <React.Fragment key={index}>
+                  {paragraph}
+                  <br /><br />
+                </React.Fragment>
+              ))}
             </Typography>
           </Box>
         </Modal>

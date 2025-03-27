@@ -74,8 +74,8 @@ const Presentation = () => {
         width: '100%',
         height: {
           xs: '750px', 
-          sm: '750px',
-          md: '770px',
+          sm: '755px',
+          md: '730px',
         },
         position: 'relative',
         backgroundImage: `url(${fondBanniere})`,
@@ -131,7 +131,7 @@ const Presentation = () => {
       <Box 
       sx={{ 
         position: 'absolute',
-        bottom: '20px',
+        bottom: '8px',
         right: '20px',
         display: 'flex',  
         flexDirection: 'column', 
@@ -139,7 +139,7 @@ const Presentation = () => {
         alignItems: 'center', 
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
         borderRadius: '8px',
-        padding: '13px',
+        padding: '5px',
         boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'
       }}
     >
@@ -147,7 +147,7 @@ const Presentation = () => {
         variant="body1" 
         sx={{ 
           color: 'white',
-          fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+          fontSize: { xs: '1rem', sm: '1.2rem', md: '1.4rem' },
           fontWeight: 'bold',
           marginBottom: '10px', // Espacement entre la date et le compteur
           fontFamily: "'Courier New', monospace",
