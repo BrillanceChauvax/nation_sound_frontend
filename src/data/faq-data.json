@@ -1,5 +1,9 @@
 [
     {
+      "question": "Nation Sound, qu'est ce que c'est ?",
+      "answer": "Il s'agit d'un festival caritatif de musique électro, dont les fonds seront reversés au profit de diverses associations qui œuvrent pour préserver l'écosystème"
+    },
+    {
       "question": "Quand aura lieu le festival Nation Sound ?",
       "answer": "Le festival Nation Sound se tiendra du 16 au 18 juillet 2025."
     },
@@ -16,20 +20,24 @@
       "answer": "Le festival est ouvert à tous, mais les mineurs de moins de 16 ans doivent être accompagnés d'un adulte."
     },
     {
-      "question": "Puis-je apporter de la nourriture et des boissons ?",
-      "answer": "La nourriture et les boissons de l'extérieur ne sont pas autorisées. De nombreux stands de restauration seront disponibles sur place."
-    },
-    {
-      "question": "Y aura-t-il des parkings disponibles ?",
-      "answer": "Oui, des parkings seront disponibles à proximité du site. Nous encourageons cependant l'utilisation des transports en commun."
-    },
-    {
       "question": "Les animaux sont-ils autorisés ?",
       "answer": "Pour des raisons de sécurité, les animaux ne sont pas autorisés sur le site du festival, à l'exception des chiens guides."
     },
     {
+      "question": "Puis-je apporter de la nourriture et des boissons ?",
+      "answer": "La nourriture et les boissons de l'extérieur ne sont pas autorisées. De nombreux stands de restauration seront disponibles sur place."
+    },
+    {
+      "question": "Quelles sont les mesures de sécurité mises en place ?",
+      "answer": "La zone sera fermée avec des points d'accès pour filtrer. Entrer sans ticket ne sera pas possible. Les accès sont consultable sur la carte interactive du site."
+    },
+    {
       "question": "Que faire en cas de perte d'un objet ?",
       "answer": "Un bureau des objets trouvés sera mis en place après l'évènement. Suivez-nous sur nos réseaux sociaux pour les modalités de mise en place."
+    },
+    {
+      "question": "Y aura-t-il des parkings disponibles ?",
+      "answer": "Oui, des parkings seront disponibles à proximité du site. Nous encourageons cependant l'utilisation des transports en commun."
     }
   ]
   
