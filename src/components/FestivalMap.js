@@ -128,11 +128,10 @@ const FestivalMap = () => {
     filter === 'all' || filter === category.type ? category.points : []
   );
 
-  const MapComponent = ({ height }) => (
+  const MapComponent = () => (
     <MapContainer 
       center={position} 
-      zoom={15} 
-      style={{ height: height, width: '100%' }}
+      style={{ height: '100%', width: '100%' }}
       fullscreenControl={true}
     >
       <TileLayer

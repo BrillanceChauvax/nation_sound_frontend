@@ -7,7 +7,7 @@ const Presentation = () => {
   const [timeLeft, setTimeLeft] = useState({});
 
   useEffect(() => {
-    const targetDate = new Date(2025, 6, 16, 0, 0, 0);
+    const targetDate = new Date(2025, 6, 16, 13, 0, 0);
     
     const calculateTimeLeft = () => {
       const difference = targetDate - new Date();
@@ -34,7 +34,8 @@ const Presentation = () => {
     <Box sx={{ 
       display: 'flex', 
       flexDirection: 'column',
-      alignItems: 'center'
+      alignItems: 'center',
+      p: 1
     }}>
       <Typography 
         variant="h5" 
@@ -74,14 +75,18 @@ const Presentation = () => {
         width: '100%',
         height: {
           xs: '750px', 
-          sm: '755px',
-          md: '730px',
+          sm: '750px',
+          md: '850px',
         },
         position: 'relative',
         backgroundImage: `url(${fondBanniere})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         borderBottom: '3px solid white', 
+        pb: { 
+          sm: '1000px',
+          md: '1000px' 
+        }
       }}
     >
       {/* Texte "Live Events présente" */}
@@ -121,8 +126,8 @@ const Presentation = () => {
           sx={{
             height: {
               xs: '350px',
-              sm: '450px',
-              md: '500px',
+              sm: '550px',
+              md: '750px',
             },
           }}
         />

@@ -1,0 +1,201 @@
+[
+    {
+        "id": 1,
+        "title": "Concert",
+        "image": "/images/events/concerts_bliboquet.png",
+        "date": "2025-07-16",
+        "heure": "17:00",
+        "duree": 3,
+        "lieu": "Scène du Trocadéro",
+        "catégorie": "Concert",
+        "description": "Concert du groupe Bilboquet Sur Glace"
+    },
+    {
+        "id": 2,
+        "title": "Concert",
+        "image": "/images/events/concerts_coccyx.png",
+        "date": "2025-07-17",
+        "heure": "18:00",
+        "duree": 2,
+        "lieu": "Scène de l'Auditorium",
+        "catégorie": "Concert",
+        "description": "Concert du groupe Michael Coccyx & les Abberrants"
+    },
+    {
+        "id": 3,
+        "title": "Concert",
+        "image": "/images/events/concerts_daniel2.png",
+        "date": "2025-07-16",
+        "heure": "15:00",
+        "duree": 2,
+        "lieu": "Scène de la Tour Eiffel",
+        "catégorie": "Concert",
+        "description": "Concert du groupe Daniel"
+    },
+    {
+        "id": 4,
+        "title": "Concert",
+        "image": "/images/events/concerts_gourbi.png",
+        "date": "2025-07-16",
+        "heure": "19:00",
+        "duree": 2,
+        "lieu": "Scène du Champ-de-Mars",
+        "catégorie": "Concert",
+        "description": "Concert du groupe Gourbi Fourbe"
+    },
+    {
+        "id": 5,
+        "title": "Concert",
+        "image": "/images/events/concerts_lobster.png",
+        "date": "2025-07-17",
+        "heure": "21:00",
+        "duree": 2,
+        "lieu": "Scène de la Fontaine de Varsovie",
+        "catégorie": "Concert",
+        "description": "Concert du groupe Unacceptable Lobster"
+    },
+    {
+        "id": 6,
+        "title": "Concert",
+        "image": "/images/events/concerts_moquette.png",
+        "date": "2025-07-17",
+        "heure": "23:00",
+        "duree": 2,
+        "lieu": "Scène du Trocadéro",
+        "catégorie": "Concert",
+        "description": "Concert du groupe Moquette Science"
+    },
+    {
+        "id": 7,
+        "title": "Concert",
+        "image": "/images/events/concerts_pompiers.png",
+        "date": "2025-07-18",
+        "heure": "17:00",
+        "duree": 2,
+        "lieu": "Scène de la Tour Eiffel",
+        "catégorie": "Concert",
+        "description": "Concert du groupe Les Pompiers Corses"
+    },
+    {
+        "id": 8,
+        "title": "Concert",
+        "image": "/images/events/concerts_sucettes-rondes.png",
+        "date": "2025-07-18",
+        "heure": "20:00",
+        "duree": 2,
+        "lieu": "Scène du Champ-de-Mars",
+        "catégorie": "Concert",
+        "description": "Concert du groupe Les Sucettes Grises"
+    },
+    {
+        "id": 9,
+        "title": "Tournoi",
+        "image": "/images/events/concours.jpg",
+        "date": "2025-07-16",
+        "heure": "12:00",
+        "duree": 1,
+        "lieu": "Scène de l'Auditorium",
+        "catégorie": "Concours",
+        "description": "Compétition du plus gros mangeur de saucisses. De nombreux prix à la clé !"
+    },
+    {
+        "id": 10,
+        "title": "Conférence",
+        "image": "/images/events/conference.jpg",
+        "date": "2025-07-17",
+        "heure": "13:00",
+        "duree": 3,
+        "lieu": "Scène de la Fontaine de Varsovie",
+        "catégorie": "Conférence",
+        "description": "Conférence sur le climat présentée par nos experts"
+    },
+    {
+        "id": 11,
+        "title": "Atelier Photo",
+        "image": "/images/events/photo.jpg",
+        "date": "2025-07-18",
+        "heure": "14:00",
+        "duree": 4,
+        "lieu": "Scène du Champ-de-Mars",
+        "catégorie": "Souvenir",
+        "description": "Mise en place d'un atelier de photo souvenir à 5€"
+    },
+    {
+        "id": 12,
+        "title": "Dédicaces",
+        "image": "/images/events/rencontre1.jpg",
+        "date": "2025-07-16",
+        "heure": "11:00",
+        "duree": 2,
+        "lieu": "Scène de la Tour Eiffel",
+        "catégorie": "Rencontre",
+        "description": "Rencontre avec les groupes 'Les Sucettes Grises' et 'Moquette Science'"
+    },
+    {
+        "id": 13,
+        "title": "Dédicaces",
+        "image": "/images/events/rencontre3.jpg",
+        "date": "2025-07-17",
+        "heure": "12:00",
+        "duree": 2,
+        "lieu": "Scène du Champ-de-Mars",
+        "catégorie": "Rencontre",
+        "description": "Rencontre avec les groupes 'Les Pompiers Corses' et 'Unacceptable Lobster'"
+    },
+    {
+        "id": 14,
+        "title": "Dédicaces",
+        "image": "/images/events/rencontre2.jpg",
+        "date": "2025-07-18",
+        "heure": "10:00",
+        "duree": 2,
+        "lieu": "Scène de la Fontaine de Varsovie",
+        "catégorie": "Rencontre",
+        "description": "Rencontre avec les groupes 'Gourbi Fourbe' et 'Daniel'"
+    },
+    {
+        "id": 15,
+        "title": "Dédicaces",
+        "image": "/images/events/rencontre1.jpg",
+        "date": "2025-07-16",
+        "heure": "09:00",
+        "duree": 2,
+        "lieu": "Scène du Trocadéro",
+        "catégorie": "Rencontre",
+        "description": "Rencontre avec le groupe 'Michael Coccyx & Les Abberrants'"
+    },
+    {
+        "id": 16,
+        "title": "Dédicaces",
+        "image": "/images/events/rencontre2.jpg",
+        "date": "2025-07-17",
+        "heure": "08:00",
+        "duree": 2,
+        "lieu": "Scène du Champ-de-Mars",
+        "catégorie": "Rencontre",
+        "description": "Rencontre avec le groupe 'Bilboquet Sur Glace'"
+    },
+    {
+        "id": 17,
+        "title": "Dédicaces",
+        "image": "/images/events/rencontre2.jpg",
+        "date": "2025-07-18",
+        "heure": "09:00",
+        "duree": 2,
+        "lieu": "Scène de la Fontaine de Varsovie",
+        "catégorie": "Rencontre",
+        "description": "Rencontre avec les organisateurs du festival"
+    },
+    {
+        "id": 18,
+        "title": "Tombola",
+        "image": "/images/events/tombola.jpg",
+        "date": "2025-07-17",
+        "heure": "16:30",
+        "duree": 1,
+        "lieu": "Scène de l'Auditorium",
+        "catégorie": "Concours",
+        "description": "Grande tombola avec ticket à prix unique de 2€. Nombreux lots à remporter !"
+    }
+  ]
+  

@@ -9,6 +9,8 @@ import concert3 from '../images/logo_concerts/concerts_gourbi.png';
 import concert4 from '../images/logo_concerts/concerts_lobster.png';
 import concert5 from '../images/logo_concerts/concerts_pompiers.png';
 import concert6 from '../images/logo_concerts/concerts_sucettes.png';
+import concert7 from '../images/logo_concerts/concerts_bliboquet.png';
+import concert8 from '../images/logo_concerts/concerts_moquette.png';
 
 const Concerts = () => {
   const theme = useTheme();
@@ -31,7 +33,7 @@ const Concerts = () => {
     pauseOnHover: false
   };
 
-  const images = [concert1, concert2, concert3, concert4, concert5, concert6];
+  const images = [concert1, concert2, concert3, concert4, concert5, concert6, concert7, concert8];
 
   return (
     <section id="concerts">

@@ -15,7 +15,7 @@
       "id": 3,
       "name": "Gamenube",
       "logo": "/images/logo_partners/Gamenube.jpg",
-      "gender": "Jeu vidéo"
+      "gender": "Jeux vidéo"
     },
     {
       "id": 4,
@@ -39,7 +39,7 @@
       "id": 7,
       "name": "Infoorammes",
       "logo": "/images/logo_partners/Infoorammes.png",
-      "gender": "Jeu vidéo"
+      "gender": "Jeux vidéo"
     },
     {
       "id": 8,
@@ -57,6 +57,6 @@
       "id": 10,
       "name": "Otari",
       "logo": "/images/logo_partners/Otari.png",
-      "gender": "Jeu vidéo"
+      "gender": "Jeux vidéo"
     }
 ]
