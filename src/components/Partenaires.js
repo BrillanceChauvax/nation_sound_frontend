@@ -51,7 +51,7 @@ const Partenaires = () => {
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
 
-  /*Permet de regrouper les partenaires par genre*/
+  /* Regrouper les partenaires par genre */
   const groupedPartners = partners.reduce((acc, partner) => {
     if (!acc[partner.gender]) {
       acc[partner.gender] = [];
@@ -149,78 +149,78 @@ const Partenaires = () => {
         </Grid>
       </Container>
 
-      <Modal
-        open={openModal}
-        onClose={handleCloseModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-      {/*Box pour montrer tous les partenaires*/}
-        <Box sx={{
-          position: 'relative',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '90%',
-          maxWidth: 800,
-          bgcolor: 'background.paper',
-          boxShadow: 24,
-          p: 4,
-          maxHeight: '90vh',
-          overflowY: 'auto',
-          borderRadius: 2,
-        }}>
-          <IconButton
-            onClick={handleCloseModal}
-            sx={{
-              position: 'absolute',
-              right: 8,
-              top: 8,
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-          <Typography id="modal-modal-title" variant="h6" component="h2" gutterBottom
-            sx={{
-              textAlign: 'center',
-              marginBottom: '20px', 
-              fontWeight: 'bold', 
-              textTransform: 'uppercase',
-            }}
-          >
-            Tous nos partenaires
-          </Typography>
-          {Object.entries(groupedPartners).map(([gender, genderPartners]) => (
-          <Box key={gender} mb={4}>
-            <Typography variant="h6" gutterBottom>
-              {gender}
+        <Modal
+          open={openModal}
+          onClose={handleCloseModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+        {/* Popup pour montrer tous les partenaires */}
+          <Box sx={{
+            position: 'relative',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '90%',
+            maxWidth: 800,
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 4,
+            maxHeight: '90vh',
+            overflowY: 'auto',
+            borderRadius: 2,
+          }}>
+            <IconButton
+              onClick={handleCloseModal}
+              sx={{
+                position: 'absolute',
+                right: 8,
+                top: 8,
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+            <Typography id="modal-modal-title" variant="h6" component="h2" gutterBottom
+              sx={{
+                textAlign: 'center',
+                marginBottom: '20px', 
+                fontWeight: 'bold', 
+                textTransform: 'uppercase',
+              }}
+            >
+              Tous nos partenaires
             </Typography>
-            <Grid container spacing={2}>
-              {genderPartners.map((partner) => (
-                <Grid item xs={6} sm={4} md={3} key={partner.id}>
-                  <Box
-                    sx={{
-                      backgroundColor: 'white',
-                      borderRadius: '20px',
-                      height: 140,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      p: 2,
-                      border: '3px solid black',
-                      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.6)',
-                    }}
-                  >
-                    <img src={partner.logo} alt={partner.name} 
-                        style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-        ))}
-      </Box>
-    </Modal>
+            {Object.entries(groupedPartners).map(([gender, genderPartners]) => (
+            <Box key={gender} mb={4}>
+              <Typography variant="h6" gutterBottom>
+                {gender}
+              </Typography>
+              <Grid container spacing={2}>
+                {genderPartners.map((partner) => (
+                  <Grid item xs={6} sm={4} md={3} key={partner.id}>
+                    <Box
+                      sx={{
+                        backgroundColor: 'white',
+                        borderRadius: '20px',
+                        height: 140,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        p: 2,
+                        border: '3px solid black',
+                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.6)',
+                      }}
+                    >
+                      <img src={partner.logo} alt={partner.name} 
+                          style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          ))}
+        </Box>
+      </Modal>
     </section>
   );
 };

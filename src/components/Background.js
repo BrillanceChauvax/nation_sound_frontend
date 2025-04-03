@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import fondSite from '../images/fond_site.png'
+import fondSite from '../images/fond_site.jpg'
 
 const Background = ({ children }) => {
   return (

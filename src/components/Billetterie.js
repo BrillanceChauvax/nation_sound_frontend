@@ -26,6 +26,7 @@ const Billetterie = () => {
               py: { xs: 2, md: 4 }
             }}
           >
+            {/* Bouton de la billetterie */}
             <Button
             variant="contained"
             href="https://www.ticketmaster.fr"

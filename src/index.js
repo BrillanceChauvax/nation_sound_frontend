@@ -6,7 +6,7 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Background from './components/Background';
 import Presentation from './components/Presentation';
 import Programmation from './components/Programmation';
-import Concerts from './components/Concerts';
+import Artistes from './components/Artistes';
 import Billetterie from './components/Billetterie';
 import FAQ from './components/FAQ'
 import FestivalMap from './components/FestivalMap'
@@ -26,7 +26,7 @@ root.render(
           <Navbar />
             <Presentation />
             <Programmation />
-            <Concerts />
+            <Artistes />
             <Billetterie />
             <FAQ />
             <FestivalMap />

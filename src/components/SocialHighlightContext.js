@@ -1,5 +1,7 @@
 import React, { createContext, useState, useContext } from 'react';
 
+/* Composant pour mettre en surbrillance les icones de réseaux sociaux */
+
 const SocialHighlightContext = createContext();
 
 export const SocialHighlightProvider = ({ children }) => {

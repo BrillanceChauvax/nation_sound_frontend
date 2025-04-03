@@ -22,7 +22,7 @@ const Rectangle = () => {
   const map = useMap();
 
   useEffect(() => {
-    // Définir les coordonnées du polygone
+    // Coordonnées de la zone de délimitation
     const polygonCoords = [
       [48.85117, 2.300887],  // Sud-Ouest
       [48.854275, 2.30548],  // Sud-Est
@@ -31,7 +31,7 @@ const Rectangle = () => {
       [48.85117, 2.300887]   // Sud-Ouest (répété pour fermer le polygone)
     ];
 
-    // Créer le polygone
+    // Création du polygone
     const polygon = L.polygon(polygonCoords, {
       color: 'red',
       fillColor: '#f03',
@@ -39,7 +39,7 @@ const Rectangle = () => {
       weight: 2
     }).addTo(map);
 
-    // Ajuster la vue de la carte pour inclure le polygone
+    // Ajustement de la vue de la carte pour inclure le polygone
     map.fitBounds(polygon.getBounds());
 
     // Nettoyage lors du démontage du composant
@@ -52,7 +52,7 @@ const Rectangle = () => {
 };
 
 
-// Liaison du JSON de la data pour les points
+// Liaison du JSON pour les points
 const POINTS = Object.entries(mapData).reduce((acc, [key, value]) => {
   acc[key] = {
     ...value,

@@ -133,6 +133,7 @@ const Presentation = () => {
         />
       </Box>
 
+      {/* Compteur */}
       <Box 
       sx={{ 
         position: 'absolute',
@@ -154,7 +155,7 @@ const Presentation = () => {
           color: 'white',
           fontSize: { xs: '1rem', sm: '1.2rem', md: '1.4rem' },
           fontWeight: 'bold',
-          marginBottom: '10px', // Espacement entre la date et le compteur
+          marginBottom: '10px',
           fontFamily: "'Courier New', monospace",
         }}
       >

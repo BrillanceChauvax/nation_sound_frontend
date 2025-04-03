@@ -1,19 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Checkbox,
-  FormControlLabel,
-  RadioGroup,
-  alpha,
-  IconButton,
-  CircularProgress,
-  Modal,
-  useTheme,
-  useMediaQuery
-} from '@mui/material';
+import { Box, Container, Typography, Grid, Checkbox, FormControlLabel, RadioGroup,
+  alpha, IconButton, CircularProgress, Modal, useTheme, useMediaQuery } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CloseIcon from '@mui/icons-material/Close';
@@ -34,7 +21,7 @@ const Programmation = () => {
   const [showFilters, setShowFilters] = useState(false);
   const sliderRef = useRef(null);
 
-  // Chargement des événements
+  // Chargement des événements 
   useEffect(() => {
     setTimeout(() => {
       setEvents(eventsData);
@@ -46,7 +33,7 @@ const Programmation = () => {
   const isEventEnCours = (event) => {
     const maintenant = new Date();
     const debutEvent = new Date(`${event.date}T${event.heure}`);
-    const finEvent = new Date(debutEvent.getTime() + (event.duree) * 3600000); // Durée par défaut : 2 heures
+    const finEvent = new Date(debutEvent.getTime() + (event.duree) * 3600000); // Durée par défaut 2 heures
     return maintenant >= debutEvent && maintenant <= finEvent;
   };
 
@@ -82,7 +69,6 @@ const Programmation = () => {
     if (showEnCours) {
       result = result.filter(isEventEnCours);
     }
-    
     return result;
   };
   
@@ -143,8 +129,8 @@ const Programmation = () => {
             </IconButton>
           </Box>
 
+          {/* Filtres */}
           <Grid container spacing={2}>
-            {/* Filtres */}
             <Grid item xs={12} md={3}>
               {(isMobile || isTablet) ? (
                 <Box sx={{ mb: 2 }}>
@@ -316,7 +302,6 @@ const Programmation = () => {
           </Grid>
         </Grid>
       </Grid>
-
         {/* Popup */}
         <Modal open={!!selectedEvent} onClose={() => setSelectedEvent(null)}>
           <Box sx={{
@@ -350,7 +335,6 @@ const Programmation = () => {
                     <Typography>📍 {selectedEvent.lieu}</Typography>
                   </Grid>
                 </Grid>
-
                 {/* Bouton de fermeture */}
                 <IconButton onClick={() => setSelectedEvent(null)} sx={{
                   position:'absolute',
