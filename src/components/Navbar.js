@@ -24,13 +24,13 @@ const Navbar = () => {
   }, [trigger]);
   
   const menuItems = [
-    { name: 'Programme', id: 'programme' },
-    { name: 'Artistes', id: 'concerts' },
-    { name: 'Billetterie', id: 'billetterie' },
-    { name: 'FAQ', id: 'faq' },
-    { name: 'Carte', id: 'carte' },
-    { name: 'Partenaires', id: 'partenaires' },
-    { name: 'Réseaux', id: 'reseaux', isSocial: true }
+    { name: 'Programme', id: 'programme', title: 'Programme du festival', ariaLabel: 'Accéder au programme' },
+    { name: 'Artistes', id: 'concerts', title: 'Liste des artistes', ariaLabel: 'Découvrir les artistes' },
+    { name: 'Billetterie', id: 'billetterie', title: 'Accès à la billetterie', ariaLabel: 'Accéder à la billetterie' },
+    { name: 'FAQ', id: 'faq', alt: 'Foire Aux Questions', title: 'Foire aux questions', ariaLabel: 'Découvrir la FAQ' },
+    { name: 'Carte', id: 'carte', alt: 'Carte interactive', title: 'Carte interactive', ariaLabel: 'Accéder à la carte' },
+    { name: 'Partenaires', id: 'partenaires', alt: 'Partenaires', title: 'Liste des partenaires', ariaLabel: 'Découvrir les partenaires' },
+    { name: 'Réseaux', id: 'reseaux', alt: 'Réseaux Sociaux', title: 'Nos réseaux sociaux', ariaLabel: 'Découvrir nos pages de réseaux sociaux', isSocial: true }
   ];
 
   const toggleDrawer = () => {
@@ -82,7 +82,7 @@ const Navbar = () => {
                     mt: 1,
                     mb: 1,
                   }}
-                  alt="Logo du site"
+                  alt="Logo Nation Sound"
                   src={logo}
                   onClick={() => window.location.href = '/'}
                 />
@@ -122,9 +122,14 @@ const Navbar = () => {
                       alignItems: 'center',
                       padding: 0
                     }}>
-                      {/* Navbar Mobile */}
+                      {/* Mappage des boutons */}
                       {menuItems.map((item) => (
-                        <ScrollLink key={item.id} to={item.id} {...scrollConfig}>
+                        <ScrollLink key={item.id} 
+                        to={item.id} 
+                        {...scrollConfig}
+                        title={item.title}
+                        aria-label={item.ariaLabel}
+                        >
                           <ListItem 
                             button 
                             onClick={toggleDrawer} 
@@ -180,7 +185,7 @@ const Navbar = () => {
                     mt: 1,
                     cursor: 'pointer'
                   }}
-                  alt="Logo du site"
+                  alt="Logo Nation Sound"
                   src={logo}
                   onClick={() => window.location.href = '/'}
                 />

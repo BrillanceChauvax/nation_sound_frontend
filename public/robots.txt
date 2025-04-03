@@ -1,3 +1,20 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /images/raw/
+
+# Empêcher l'indexation des fichiers spécifiques
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Réduire la charge du serveur
+Crawl-delay: 10

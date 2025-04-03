@@ -98,11 +98,13 @@ const GeolocationControl = () => {
     };
   }, [map, isLocating]);
 
+  // Bouton pour la géolocalisation
   return (
     <Button 
       onClick={handleLocate} 
       disabled={isLocating}
       variant="contained"
+      aria-label="Me localiser sur la carte"
       sx={{
         position: 'absolute',
         top: '10px',
@@ -215,6 +217,8 @@ const FestivalMap = () => {
                       Filtrer par type
                     </InputLabel>
                     <Select 
+                      labelId="filter-label"
+                      id="filter-select"
                       value={filter} 
                       onChange={handleFilterChange} 
                       label="Filtrer par type"

@@ -112,7 +112,7 @@ const Programmation = () => {
             gap: { xs: '10px', md: '20px' },
             mb: { xs: '30px', md: '40px' }
           }}>
-            <IconButton onClick={goToPrev} sx={{ color: 'white' }}>
+            <IconButton onClick={goToPrev} sx={{ color: 'white' }} aria-label="Précédent">
               <ArrowBackIcon fontSize="large"/>
             </IconButton>
             
@@ -124,7 +124,7 @@ const Programmation = () => {
               Programmation
             </Typography>
             
-            <IconButton onClick={goToNext} sx={{ color: 'white' }}>
+            <IconButton onClick={goToNext} sx={{ color: 'white' }} aria-label="Suivant">
               <ArrowForwardIcon fontSize="large" />
             </IconButton>
           </Box>

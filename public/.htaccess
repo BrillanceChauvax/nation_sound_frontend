@@ -1,0 +1,37 @@
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+</IfModule>
+
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>
+
+# Désactiver l'affichage du contenu des répertoires
+Options -Indexes
+
+# Bloquer l'accès aux fichiers cachés
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Activer la protection contre le cross-site scripting (XSS)
+<IfModule mod_headers.c>
+  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>
+
+# Forcer HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?nationsound\.great-site\.net [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ - [F]
+
