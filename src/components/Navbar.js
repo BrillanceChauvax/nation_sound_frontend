@@ -74,18 +74,20 @@ const Navbar = () => {
                   <MenuIcon />
                 </IconButton>
                 {/* Logo Mobile qui au clic recharge la page */}
-                <Box
-                  component="img"
-                  sx={{ 
-                    height: 50,
-                    cursor: 'pointer',
-                    mt: 1,
-                    mb: 1,
-                  }}
-                  alt="Logo Nation Sound"
-                  src={logo}
-                  onClick={() => window.location.href = '/'}
-                />
+                <h1 style={{ margin: 0 }}>
+                  <Box
+                    component="img"
+                    sx={{ 
+                      height: 50,
+                      cursor: 'pointer',
+                      mt: 1,
+                      mb: 1,
+                    }}
+                    alt="Nation Sound"
+                    src={logo}
+                    onClick={() => window.location.href = '/'}
+                  />
+                </h1>
                 {/* Affichage menu burger */}  
                 <Drawer
                   anchor="top"
@@ -175,20 +177,22 @@ const Navbar = () => {
             ) : (
               <>
                 {/* Logo Desktop qui au clic recharge la page */}
-                <Box
-                  component="img"
-                  sx={{ 
-                    height: 70,
-                    mr: 6,
-                    ml: 2,
-                    mb: 1,
-                    mt: 1,
-                    cursor: 'pointer'
-                  }}
-                  alt="Logo Nation Sound"
-                  src={logo}
-                  onClick={() => window.location.href = '/'}
-                />
+                <h1 style={{ margin: 0 }}>
+                  <Box
+                    component="img"
+                    sx={{ 
+                      height: 70,
+                      mr: 6,
+                      ml: 2,
+                      mb: 1,
+                      mt: 1,
+                      cursor: 'pointer'
+                    }}
+                    alt="Nation Sound"
+                    src={logo}
+                    onClick={() => window.location.href = '/'}
+                  />
+                </h1>
                 {/* Navbar Desktop */}  
                 <Box sx={{ 
                    display: 'flex',
