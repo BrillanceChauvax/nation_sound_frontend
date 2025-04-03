@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
-import logo from '../images/logo.png';
-import fondBanniere from '../images/fond_banniere.jpg';
+import logo from '../images/logo.avif';
+import fondBanniere from '../images/fond_banniere.avif';
 
 const Presentation = () => {
   const [timeLeft, setTimeLeft] = useState({});
@@ -76,7 +76,6 @@ const Presentation = () => {
         height: {
           xs: '750px', 
           sm: '750px',
-          md: '850px',
         },
         position: 'relative',
         backgroundImage: `url(${fondBanniere})`,
@@ -127,7 +126,7 @@ const Presentation = () => {
             height: {
               xs: '350px',
               sm: '550px',
-              md: '750px',
+              md: '650px',
             },
           }}
         />

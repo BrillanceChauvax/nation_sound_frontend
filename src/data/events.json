@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Concert",
-        "image": "/images/events/concerts_bliboquet.png",
+        "image": "/images/events/concerts_bilboquet.avif",
         "date": "2025-07-16",
         "heure": "17:00",
         "duree": 3,
@@ -13,7 +13,7 @@
     {
         "id": 2,
         "title": "Concert",
-        "image": "/images/events/concerts_coccyx.png",
+        "image": "/images/events/concerts_coccyx.avif",
         "date": "2025-07-17",
         "heure": "18:00",
         "duree": 2,
@@ -24,7 +24,7 @@
     {
         "id": 3,
         "title": "Concert",
-        "image": "/images/events/concerts_daniel2.png",
+        "image": "/images/events/concerts_daniel.avif",
         "date": "2025-07-16",
         "heure": "15:00",
         "duree": 2,
@@ -35,7 +35,7 @@
     {
         "id": 4,
         "title": "Concert",
-        "image": "/images/events/concerts_gourbi.png",
+        "image": "/images/events/concerts_gourbi.avif",
         "date": "2025-07-16",
         "heure": "19:00",
         "duree": 2,
@@ -46,7 +46,7 @@
     {
         "id": 5,
         "title": "Concert",
-        "image": "/images/events/concerts_lobster.png",
+        "image": "/images/events/concerts_lobster.avif",
         "date": "2025-07-17",
         "heure": "21:00",
         "duree": 2,
@@ -57,7 +57,7 @@
     {
         "id": 6,
         "title": "Concert",
-        "image": "/images/events/concerts_moquette.png",
+        "image": "/images/events/concerts_moquette.avif",
         "date": "2025-07-17",
         "heure": "23:00",
         "duree": 2,
@@ -68,7 +68,7 @@
     {
         "id": 7,
         "title": "Concert",
-        "image": "/images/events/concerts_pompiers.png",
+        "image": "/images/events/concerts_pompiers.avif",
         "date": "2025-07-18",
         "heure": "17:00",
         "duree": 2,
@@ -79,7 +79,7 @@
     {
         "id": 8,
         "title": "Concert",
-        "image": "/images/events/concerts_sucettes-rondes.png",
+        "image": "/images/events/concerts_sucettes-rondes.avif",
         "date": "2025-07-18",
         "heure": "20:00",
         "duree": 2,
@@ -90,7 +90,7 @@
     {
         "id": 9,
         "title": "Tournoi",
-        "image": "/images/events/concours.jpg",
+        "image": "/images/events/concours.avif",
         "date": "2025-07-16",
         "heure": "12:00",
         "duree": 1,
@@ -101,7 +101,7 @@
     {
         "id": 10,
         "title": "Conférence",
-        "image": "/images/events/conference.jpg",
+        "image": "/images/events/conference.avif",
         "date": "2025-07-17",
         "heure": "13:00",
         "duree": 3,
@@ -112,7 +112,7 @@
     {
         "id": 11,
         "title": "Atelier Photo",
-        "image": "/images/events/photo.jpg",
+        "image": "/images/events/photo.avif",
         "date": "2025-07-18",
         "heure": "14:00",
         "duree": 4,
@@ -123,7 +123,7 @@
     {
         "id": 12,
         "title": "Dédicaces",
-        "image": "/images/events/rencontre1.jpg",
+        "image": "/images/events/rencontre1.avif",
         "date": "2025-07-16",
         "heure": "11:00",
         "duree": 2,
@@ -134,7 +134,7 @@
     {
         "id": 13,
         "title": "Dédicaces",
-        "image": "/images/events/rencontre3.jpg",
+        "image": "/images/events/rencontre3.avif",
         "date": "2025-07-17",
         "heure": "12:00",
         "duree": 2,
@@ -145,7 +145,7 @@
     {
         "id": 14,
         "title": "Dédicaces",
-        "image": "/images/events/rencontre2.jpg",
+        "image": "/images/events/rencontre2.avif",
         "date": "2025-07-18",
         "heure": "10:00",
         "duree": 2,
@@ -156,7 +156,7 @@
     {
         "id": 15,
         "title": "Dédicaces",
-        "image": "/images/events/rencontre1.jpg",
+        "image": "/images/events/rencontre1.avif",
         "date": "2025-07-16",
         "heure": "09:00",
         "duree": 2,
@@ -167,7 +167,7 @@
     {
         "id": 16,
         "title": "Dédicaces",
-        "image": "/images/events/rencontre2.jpg",
+        "image": "/images/events/rencontre2.avif",
         "date": "2025-07-17",
         "heure": "08:00",
         "duree": 2,
@@ -178,7 +178,7 @@
     {
         "id": 17,
         "title": "Dédicaces",
-        "image": "/images/events/rencontre2.jpg",
+        "image": "/images/events/rencontre2.avif",
         "date": "2025-07-18",
         "heure": "09:00",
         "duree": 2,
@@ -189,7 +189,7 @@
     {
         "id": 18,
         "title": "Tombola",
-        "image": "/images/events/tombola.jpg",
+        "image": "/images/events/tombola.avif",
         "date": "2025-07-17",
         "heure": "16:30",
         "duree": 1,

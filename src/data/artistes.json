@@ -2,42 +2,42 @@
     {
       "id": 1,
       "name": "coccyx",
-      "image": "/images/events/concerts_coccyx.png"
+      "image": "/images/events/concerts_coccyx.avif"
     },
     {
       "id": 2,
       "name": "daniel",
-      "image": "/images/events/concerts_daniel2.png"
+      "image": "/images/events/concerts_daniel.avif"
     },
     {
       "id": 3,
       "name": "gourbi",
-      "image": "/images/events/concerts_gourbi.png"
+      "image": "/images/events/concerts_gourbi.avif"
     },
     {
       "id": 4,
       "name": "lobster",
-      "image": "/images/events/concerts_lobster.png"
+      "image": "/images/events/concerts_lobster.avif"
     },
     {
       "id": 5,
       "name": "pompiers",
-      "image": "/images/events/concerts_pompiers.png"
+      "image": "/images/events/concerts_pompiers.avif"
     },
     {
       "id": 6,
       "name": "sucettes",
-      "image": "/images/events/concerts_sucettes-rondes.png"
+      "image": "/images/events/concerts_sucettes-rondes.avif"
     },
     {
       "id": 7,
       "name": "bliboquet",
-      "image": "/images/events/concerts_bliboquet.png"
+      "image": "/images/events/concerts_bilboquet.avif"
     },
     {
       "id": 8,
       "name": "moquette",
-      "image": "/images/events/concerts_moquette.png"
+      "image": "/images/events/concerts_moquette.avif"
     }
   ]
   

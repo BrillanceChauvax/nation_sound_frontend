@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem,
   ListItemText, Box, useMediaQuery, useTheme, alpha, useScrollTrigger } from '@mui/material';
 import { Link as ScrollLink } from 'react-scroll';
 import MenuIcon from '@mui/icons-material/Menu';
-import logo from '../images/logo.png';
+import logo from '../images/logo.avif';
 import { useSocialHighlight } from './SocialHighlightContext';
 
 const Navbar = () => {
