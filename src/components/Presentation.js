@@ -125,8 +125,8 @@ const Presentation = () => {
           sx={{
             height: {
               xs: '350px',
-              sm: '550px',
-              md: '650px',
+              sm: '450px',
+              md: '500px',
             },
           }}
         />
