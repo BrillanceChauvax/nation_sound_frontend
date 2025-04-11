@@ -15,14 +15,13 @@ const Artistes = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 4000,
+    speed: 3000,
     slidesToShow: isMobile ? 2 : isTablet ? 2 : 3,
     slidesToScroll: 1,
     arrows: false,
     centerMode: false, 
     variableWidth: false,
     autoplay: true, 
-    autoplaySpeed: 10,
     pauseOnHover: false
   };
 

@@ -23,10 +23,11 @@ const Programmation = () => {
 
   // Chargement des événements 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setEvents(eventsData);
       setLoading(false);
-    }, 500);
+    });
+    return () => clearTimeout(timer);
   }, []);
 
   // Vérification des concerts en cours
@@ -37,7 +38,7 @@ const Programmation = () => {
     return maintenant >= debutEvent && maintenant <= finEvent;
   };
 
-  // Tri des événements
+  // Tri des évènements
   const sortEvents = (events, filter) => {
     if (!filter) return events;
     return [...events].sort((a, b) => {
@@ -116,10 +117,12 @@ const Programmation = () => {
               <ArrowBackIcon fontSize="large"/>
             </IconButton>
             
-            <Typography variant={isMobile ? "h4" : "h3"} sx={{ 
+            <Typography 
+            variant={isMobile ? "h4" : "h3"} 
+            sx={{ 
               color: 'white', 
               fontWeight: 'bold', 
-              textAlign: 'center'
+              textAlign: 'center',
             }}>
               Programmation
             </Typography>
@@ -136,6 +139,7 @@ const Programmation = () => {
                 <Box sx={{ mb: 2 }}>
                   <Typography
                     variant="h6"
+                    component="h3"
                     sx={{
                       color: 'white',
                       fontWeight: 'bold',
@@ -152,7 +156,7 @@ const Programmation = () => {
                     }}
                     onClick={() => setShowFilters(!showFilters)}
                   >
-                    Filtres {showFilters ? '▲' : '▼'}
+                    filtre chronologique {showFilters ? '▲' : '▼'}
                   </Typography>
                   <Box sx={{ 
                     maxHeight: showFilters ? '300px' : '0px',
@@ -198,13 +202,16 @@ const Programmation = () => {
                   borderRadius: '10px',
                   border: '3px solid white'
                 }}>
-                  <Typography variant="h6" sx={{ 
-                    color: 'white',
-                    fontWeight: 'bold',
-                    mb: '15px',
-                    textTransform: 'uppercase'
-                  }}>
-                    Filtres
+                  <Typography 
+                    variant="h6" 
+                    component="h3"
+                    sx={{ 
+                      color: 'white',
+                      fontWeight: 'bold',
+                      mb: '15px',
+                      textTransform: 'uppercase'
+                    }}>
+                    Ordonner par
                   </Typography>
                   
                   <RadioGroup value={activeFilter || ''}>
@@ -259,11 +266,13 @@ const Programmation = () => {
                         }}
                       >
                         {/* Image */}
-                        <Box component="img" src={event.image} alt={event.title} sx={{
-                          width:'100%',
-                          height:'100%',
-                          objectFit:'cover'
-                        }} />
+                          <Box component="img" src={event.image} alt={event.title} 
+                            sx={{
+                              width:'100%',
+                              height:'100%',
+                              objectFit:'cover'
+                            }} 
+                          />
                         {/* Overlay au survol */}
                         <Box
                           className="hover-overlay"
@@ -288,12 +297,16 @@ const Programmation = () => {
                         </Box>
                       </Box>
                       {/* Titre centré */}
-                      <Typography variant="h6" sx={{
-                        color:'white',
-                        textAlign:'center',
-                        mt:'10px',
-                        mb:'30px'
-                      }}>{event.title}</Typography>
+                      <Typography variant="h6" 
+                        component="h3"
+                        sx={{
+                          color:'white',
+                          textAlign:'center',
+                          mt:'10px',
+                          mb:'30px'
+                        }}>
+                        {event.title}
+                      </Typography>
                     </Box>
                   ))}
                 </Slider>

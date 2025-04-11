@@ -13,7 +13,7 @@ const FAQ = () => {
           width: '100%', 
           position: 'relative', 
           borderBottom: '3px solid white', 
-          padding: '60px 0',
+          padding: '40px 0',
         }}
       >
         <Grid container justifyContent="center">

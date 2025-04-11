@@ -75,18 +75,20 @@ const Navbar = () => {
                 </IconButton>
                 {/* Logo Mobile qui au clic recharge la page */}
                 <h1 style={{ margin: 0 }}>
-                  <Box
-                    component="img"
-                    sx={{ 
-                      height: 50,
-                      cursor: 'pointer',
-                      mt: 1,
-                      mb: 1,
-                    }}
-                    alt="Nation Sound"
-                    src={logo}
-                    onClick={() => window.location.href = '/'}
-                  />
+                  <a href="/" title="Accueil" aria-label="Retour à l'accueil">
+                    <Box
+                      component="img"
+                      sx={{ 
+                        height: 50,
+                        cursor: 'pointer',
+                        mt: 1,
+                        mb: 1,
+                      }}
+                      alt="Nation Sound"
+                      src={logo}
+                      onClick={() => window.location.href = '/'}
+                    />
+                  </a>
                 </h1>
                 {/* Affichage menu burger */}  
                 <Drawer
@@ -124,13 +126,15 @@ const Navbar = () => {
                       alignItems: 'center',
                       padding: 0
                     }}>
-                      {/* Mappage des boutons */}
+                      {/* Mappage des boutons version mobile*/}
                       {menuItems.map((item) => (
                         <ScrollLink key={item.id} 
                         to={item.id} 
                         {...scrollConfig}
+                        href={`${item.id}`} 
                         title={item.title}
                         aria-label={item.ariaLabel}
+                        style={{ textDecoration: 'none'}}
                         >
                           <ListItem 
                             button 
@@ -178,20 +182,22 @@ const Navbar = () => {
               <>
                 {/* Logo Desktop qui au clic recharge la page */}
                 <h1 style={{ margin: 0 }}>
-                  <Box
-                    component="img"
-                    sx={{ 
-                      height: 70,
-                      mr: 6,
-                      ml: 2,
-                      mb: 1,
-                      mt: 1,
-                      cursor: 'pointer'
-                    }}
-                    alt="Nation Sound"
-                    src={logo}
-                    onClick={() => window.location.href = '/'}
-                  />
+                  <a href="/" title="Accueil" aria-label="Retour à l'accueil">
+                    <Box
+                      component="img"
+                      sx={{ 
+                        height: 70,
+                        mr: 6,
+                        ml: 2,
+                        mb: 1,
+                        mt: 1,
+                        cursor: 'pointer'
+                      }}
+                      alt="Nation Sound"
+                      src={logo}
+                      onClick={() => window.location.href = '/'}
+                    />
+                  </a>
                 </h1>
                 {/* Navbar Desktop */}  
                 <Box sx={{ 
@@ -215,9 +221,15 @@ const Navbar = () => {
                   padding: '5px 5px', 
                   }
                   }}>
-                  {/* Surbrillance des réseaux sociaux au clic sur le menu Réseaux de la Navbar */}
+                  {/* Mappage des boutons version desktop */}
                   {menuItems.map((item) => (
-                    <ScrollLink key={item.id} to={item.id} {...scrollConfig} style={{flex: '1 1 0%'}}
+                    <ScrollLink key={item.id} 
+                    to={item.id} 
+                    {...scrollConfig} 
+                    href={`${item.id}`} 
+                    title={item.title}
+                    aria-label={item.ariaLabel}
+                    style={{flex: '1 1 0%'}}
                     onClick={() => item.id === 'reseaux' && triggerHighlight()}
                     >
                     <Button fullWidth>{item.name}</Button>

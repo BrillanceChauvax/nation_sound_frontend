@@ -6,20 +6,26 @@ const Background = ({ children }) => {
   return (
     <Box
       sx={{
-        width: '100%', 
-        minHeight: '100vh',
         position: 'relative',
+        '&::before': {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 0
+        },
         backgroundImage: `url(${fondSite})`,
+        backgroundColor: '#000000', 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden', 
+        minHeight: '100vh',
       }}
     >
-      {children}
+      <Box sx={{ position: 'relative', zIndex: 1 }}>
+        {children}
+      </Box>
     </Box>
   );
 };

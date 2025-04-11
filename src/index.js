@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import Navbar from './components/Navbar';
 import reportWebVitals from './reportWebVitals';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme, CircularProgress, Box } from '@mui/material';
 import Background from './components/Background';
 import Presentation from './components/Presentation';
-import Programmation from './components/Programmation';
-import Artistes from './components/Artistes';
-import Billetterie from './components/Billetterie';
-import FAQ from './components/FAQ'
-import FestivalMap from './components/FestivalMap'
-import Partenaires from './components/Partenaires'
-import Footer from './components/Footer'
 import { SocialHighlightProvider } from './components/SocialHighlightContext';
+
+const Billetterie = lazy(() => import('./components/Billetterie'));
+const Footer = lazy(() => import('./components/Footer'));
+const Programmation = lazy(() => import('./components/Programmation'));
+const Artistes = lazy(() => import('./components/Artistes'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const FestivalMap = lazy(() => import('./components/FestivalMap'));
+const Partenaires = lazy(() => import('./components/Partenaires'));
+
+const LoadingComponent = () => (
+  <Box sx={{ 
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    height: '300px',
+    width: '100%'
+  }}>
+    <CircularProgress color="primary" />
+  </Box>
+);
 
 const theme = createTheme();
 
@@ -25,13 +38,41 @@ root.render(
         <Background>
           <Navbar />
             <Presentation />
-            <Programmation />
-            <Artistes />
-            <Billetterie />
-            <FAQ />
-            <FestivalMap />
-            <Partenaires />
+            <Suspense fallback={<LoadingComponent />}>
+            <div id="programme">
+              <Programmation />
+            </div>
+            </Suspense>
+            <Suspense fallback={<LoadingComponent />}>
+            <div id="concerts">
+              <Artistes />
+            </div>
+            </Suspense> 
+            <Suspense fallback={<LoadingComponent />}>
+            <div id="billetterie">
+              <Billetterie />
+            </div>
+            </Suspense> 
+            <Suspense fallback={<LoadingComponent />}>
+            <div id="faq">
+              <FAQ />
+            </div>
+            </Suspense>
+            <Suspense fallback={<LoadingComponent />}>
+            <div id="carte">
+              <FestivalMap />
+            </div>
+            </Suspense>
+            <Suspense fallback={<LoadingComponent />}>
+            <div id="partenaires">
+              <Partenaires />
+            </div>
+            </Suspense>
+          <Suspense fallback={<LoadingComponent />}>
+          <div id="footer">
           <Footer />
+          </div>
+          </Suspense>
         </Background>
       </SocialHighlightProvider>
     </ThemeProvider>

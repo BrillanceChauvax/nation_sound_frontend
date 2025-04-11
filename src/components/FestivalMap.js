@@ -168,7 +168,7 @@ const FestivalMap = () => {
           width: '100%', 
           position: 'relative', 
           borderBottom: '3px solid white', 
-          padding: '60px 0',
+          padding: '40px 0',
         }}
       >
         <Grid container justifyContent="center">
@@ -179,7 +179,7 @@ const FestivalMap = () => {
               align="center" 
               sx={{ 
                 color: 'white', 
-                mb: 4, 
+                mb: 5, 
                 fontWeight: 'bold' 
               }}
             >
@@ -208,7 +208,7 @@ const FestivalMap = () => {
                   }}
                 >
                   <FormControl fullWidth size="small">
-                    <InputLabel 
+                    <InputLabel id="filter-label" htmlFor="filter-select"
                       sx={{ 
                         fontWeight: 'bold',
                         color: 'black',
@@ -222,6 +222,7 @@ const FestivalMap = () => {
                       value={filter} 
                       onChange={handleFilterChange} 
                       label="Filtrer par type"
+                      aria-label="Filtrer par type"
                       sx={{
                         '& .MuiSelect-select': {
                           paddingY: '12px',

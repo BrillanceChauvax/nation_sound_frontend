@@ -80,7 +80,8 @@ const Partenaires = () => {
               align="center" 
               sx={{ 
                 color: 'white', 
-                mb: 6, 
+                mb: 5, 
+                pt: '10px',
                 fontWeight: 'bold' 
               }}
             >

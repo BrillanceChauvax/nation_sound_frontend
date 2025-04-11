@@ -1,34 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Box, Typography } from '@mui/material';
 import logo from '../images/logo.avif';
 import fondBanniere from '../images/fond_banniere.avif';
+import fondBanniereMobile from '../images/fond_banniere_mobile.avif';
 
+// Initialisation du compteur
 const Presentation = () => {
   const [timeLeft, setTimeLeft] = useState({});
-
+  
+  const targetDate = useMemo(() => new Date(2025, 6, 16, 13, 0, 0), []);
+  
+  const calculateTimeLeft = useCallback(() => {
+    const difference = targetDate - new Date();
+    
+    if (difference > 0) {
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }, [targetDate]);
+  
   useEffect(() => {
-    const targetDate = new Date(2025, 6, 16, 13, 0, 0);
-    
-    const calculateTimeLeft = () => {
-      const difference = targetDate - new Date();
-      
-      if (difference > 0) {
-        return {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        };
-      }
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    };
-    
     setTimeLeft(calculateTimeLeft());
+    
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
+    
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]); 
+  
 
   const CountdownUnit = ({ value, label }) => (
     <Box sx={{ 
@@ -74,27 +79,29 @@ const Presentation = () => {
       sx={{
         width: '100%',
         height: {
-          xs: '750px', 
-          sm: '750px',
+          xs: 'calc(100vh - 56px)',
+          sm: 'calc(100vh - 94px)',
         },
         position: 'relative',
-        backgroundImage: `url(${fondBanniere})`,
+        backgroundImage: {
+          xs: `url(${fondBanniereMobile})`,
+          sm: `url(${fondBanniere})`,
+        },
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         borderBottom: '3px solid white', 
-        pb: { 
-          sm: '1000px',
-          md: '1000px' 
-        }
+
       }}
     >
       {/* Texte "Live Events présente" */}
       <Box sx={{ position: 'absolute', top: '20px', left: '20px', color: 'white' }}>
         <Typography 
           variant="h3" 
+          component="h1"
           sx={{ 
             fontWeight: 700,
             lineHeight: 1,
+            textShadow: '0 0 8px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.6)',
           }}
         >
           Live Events<sup>®</sup>
@@ -103,6 +110,7 @@ const Presentation = () => {
           variant="body1" 
           sx={{ 
             marginTop: '5px',
+            textShadow: '0 0 8px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.6)',
           }}
         >
           présente
